@@ -1,32 +1,10 @@
 html {
     margin: 0;
     padding: 0;
-    display: flex;
-    /* CSS'de display: flex; kullanıldığında, 
-    belirli bir elemanın içindeki çocuk elemanları düzenlemek için kullanılan bir düzen modeli olan Flexbox'u etkinleştirirsiniz. 
-    Flexbox, esnek ve dinamik bir düzenleme sistemidir ve özellikle elemanları hizalamak, düzenlemek ve dağıtmak için kullanılır.
-    
-    display: flex; dediğinizde, aşağıdaki gibi bir dizi özellik ve değer devreye girer: 
-
-    flex-direction: Bu özellik, flex konteynerindeki öğelerin düzenini belirler. 
-    Varsayılan değeri rowdur, yani öğeler soldan sağa doğru sıralanır. 
-    Ancak, column, row-reverse, column-reverse gibi değerlerle dikey veya ters sıralama sağlayabilirsiniz.    
-    
-    justify-content: Bu özellik, öğeleri flex konteyneri içinde yatay (yatay eksende) nasıl hizalayacağınızı belirler.
-    flex-start, flex-end, center, space-between, space-around ve space-evenly gibi değerler kullanabilirsiniz. 
-
-    align-items: Bu özellik, öğeleri flex konteyneri içinde dikey (dikey eksende) nasıl hizalayacağınızı belirler. 
-    flex-start, flex-end, center, baseline ve stretch gibi değerler kullanabilirsiniz. 
-
-    align-self: Bu özellik, belirli bir flex öğesinin dikey hizalamasını belirlemenizi sağlar ve 
-    align-items özelliğinden bağımsız olarak çalışır. */
-    flex-direction: row;
-    /* sütun sıralaması yapıyor */
-    align-items: center;
-    /* sütunları ortalıyor */
+    display: flex;    
+    flex-direction: row;    
+    align-items: center;   
     box-sizing: border-box;
-    /* borderların kapladığı alan genişliği etkilemeyecek şekilde oluşuyor. */
-
 }
 
 html {
@@ -100,7 +78,6 @@ img:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
-
 .orta_alan {
     display: flex;
     flex-direction: row;
@@ -108,9 +85,7 @@ img:hover {
     background-color: rgb(62, 247, 123);
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
-
 .orta {
     width: 24%;
     border: 2px solid gray;
@@ -119,7 +94,6 @@ img:hover {
     background: linear-gradient(rgba(2, 119, 32, 0.8), rgba(111, 233, 138, 0.5));
     margin-bottom: 1%;
 }
-
 .orta .içerik {
     display: flex;
     justify-content: center;
@@ -129,7 +103,6 @@ img:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
 }
-
 p {
     text-indent: 15px;
 }
