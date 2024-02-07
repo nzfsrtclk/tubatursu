@@ -11,10 +11,8 @@ html {
     font-size: 10px;
 }
 
-
-
-.navbar {
-    flex-direction: row;
+.fa-solid {
+    font-size: 1.5rem;
 }
 
 .header {
@@ -39,6 +37,8 @@ h2 {
 }
 
 
+
+
 .nav-link,
 .dropdown-item,
 .dropdown-menu,
@@ -47,17 +47,31 @@ h2 {
     font-weight: bold;
     margin-left: 1rem;
     font-family: 'Courier New', Courier, monospace;
-
 }
 
-.fa-solid {
-    font-size: 2rem;
-    text-align: center;
+.nav-link:hover,
+.dropdown-item:hover,
+.dropdown-menu:hover,
+.navbar-brand:hover {
+    color: red;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.text-hotline{
+    margin-left: -7px;
+    font-size: 20px;
 }
 
 .btn {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .rounded,
@@ -145,7 +159,7 @@ footer {
 }
 
 .list-group-item {
-    font-size: 30px;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,10 +171,8 @@ footer {
     border-radius: 30px;
 }
 
-.fa-solid {
+.phone {
     font-size: 20px;
-    margin-left: -250px;
-    margin-bottom: 40px;
 }
 
 #mapdiv {
