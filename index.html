@@ -238,11 +238,10 @@
 
 
     <footer>
-
         <div class="list-group">
             <a href="tel:+905071690066" class="list-group-item list-group-item-action list-group-item-primary" >
-                <span class="text-hotline">+905071690066</span>
                 <i class="fa-solid fa-phone"> TELEFON</i>
+                <span class="text-hotline">+905071690066</span>                
             </a>
             <a href="https://api.whatsapp.com/send?phone=905071690066&amp;text=Ürünler Hakkında Bilgi Almak İstiyorum" class="list-group-item list-group-item-action list-group-item-secondary" target="_blank"><i
                     class="fa-brands fa-whatsapp"></i> Whatsapp</a>
@@ -263,118 +262,13 @@
         </div>
     </footer>
 
-    <div class="div">
-        <h1>ATKI HESAPLAMA</h1>
-        <input type="text" name="" id="cm" placeholder="Çözgü Metresi">
-        <input type="text" name="" id="te" placeholder="Tarak Eni">
-        <input type="text" name="" id="as" placeholder="Atkı Sıklığı">
-    </div>
-
-    <div class="di">
-        <input style="width: 104px;" type="text" name="" id="inu" placeholder="İplik No ( Ne )"> <span>/</span>
-        <input style="width: 45px;" type="text" name="" id="bü" placeholder="Büküm">
-    </div>
-
-    <div class="di">
-        <span>Renk Raporlu mu ? </span> <input type="checkbox" id="checkBox">
-        <span id="arr">Ana Renk Raporu :</span>
-        <input style="width: 35px;" type="text" name="anarenk" id="anarenk" placeholder="" value="1">
-        <span id="hrr">Hesaplanan Renk Raporu :</span>
-        <input style="width: 35px;" type="text" name="renk" id="ren" placeholder="" value="1">
-    </div>
-
-    <div class="div">
-        <input style="font-size: 16px;" type="button" value="HESAPLA" id="hes">
-        <input style="font-size: 16px;" type="button" value="TEMİZLE" id="del" onclick="del()">
-        <input type="text" name="" id="s" placeholder="SONUÇ">
-    </div>
-
-    <script>
-
-function nazif() {
-    let metre = document.getElementById("cm").value;
-    let en = document.getElementById("te").value;
-    let siklik = document.getElementById("as").value;
-    let ip = document.getElementById("inu").value;
-    let büküm = document.getElementById("bü").value;
-    let ana = document.getElementById("anarenk").value;
-    let renk = document.getElementById("ren").value;
-
-    let sonuc = ((((metre * en * siklik) / ((ip / büküm) * 1.693)) / 1000) / ana) * renk;
-
-    document.getElementById("s").value = "Atkı KG :" + sonuc.toFixed(2);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    var checkBox = document.getElementById("checkBox");
-    var arrSpan = document.getElementById("arr");
-    var anarenkInput = document.getElementById("anarenk");
-    var renInput = document.getElementById("ren");
-    var hrrspan = document.getElementById("hrr");
-
-    checkBox.addEventListener("change", function () {
-        if (checkBox.checked) {
-            // Checkbox işaretlendiğinde
-            arrSpan.style.display = "inline";
-            anarenkInput.style.display = "inline";
-            renInput.style.display = "inline";
-            hrrspan.style.display = "inline";
-        } else {
-            // Checkbox işaretlenmediğinde
-            arrSpan.style.display = "none";
-            anarenkInput.style.display = "none";
-            renInput.style.display = "none";
-            hrrspan.style.display = "none";
-        }
-    });
-
-    // Temizle butonunu ekleyelim
-    var delButton = document.getElementById("del");
-    delButton.addEventListener("click", function () {
-        // Temizleme fonksiyonunu çağır
-        document.getElementById("cm").value = "";
-        document.getElementById("te").value = "";
-        document.getElementById("as").value = "";
-        document.getElementById("inu").value = "";
-        document.getElementById("bü").value = "";
-        document.getElementById("anarenk").value = "1";
-        document.getElementById("ren").value = "1";
-        document.getElementById("s").value = ""; // Varsa sonucu da temizle
-    });
-});
-
-    function del(){
-        location.reload();
-    }
-
-let btn = document.getElementById("hes");
-btn.onclick = nazif;
-
-    </script>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
