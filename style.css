@@ -68,12 +68,6 @@ h2 {
     font-weight: bold;
 }
 
-.form-control {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .rounded,
 .container-sm {
     display: inline-block;
