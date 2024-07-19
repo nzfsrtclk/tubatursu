@@ -1,3 +1,4 @@
+/*
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -287,3 +288,260 @@
 </body>
 
 </html>
+*/
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigorta Bedeli Hesaplama Sistemi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .baslik1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .baslik {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 60%;
+            border-radius: 50px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+        .baslik h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .baslik h2 {
+            margin: 5px 0 0;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        .yapi {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        .yapi ol {
+            list-style: none;
+            padding: 0;
+            counter-reset: item;
+            /* Sayaç sıfırlama */
+        }
+
+        .yapi .asdasd {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .yapi ol li {
+            counter-increment: item;
+            /* Sayaç arttırma */
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .yapi ol li::before {
+            content: counter(item) "-) ";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .yapi ol li input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .yapi ol p {
+            font-weight: bolder;
+        }
+
+        .yazdir {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons button:disabled {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="baslik1">
+        <div class="baslik">
+            <h1>Sigorta Bedeli Hesaplama Sistemi</h1>
+            <h2>Bina - Sivil Riziko</h2>
+        </div>
+    </div>
+    <div class="yapi">
+        <ol>
+            <p>Bina yapı tarzını seçiniz</p>
+            <li>
+                <input type="radio" name="bina" value="1" id="option1"> <span>Betonarme</span>
+            </li>
+            <li>
+                <input type="radio" name="bina" value="2" id="option2"> <span>Yığma Tuğla (Kerpiç)</span>
+            </li>
+            <li>
+                <input type="radio" name="bina" value="3" id="option3"> <span>Ahşap</span>
+            </li>
+            <li>
+                <input type="radio" name="bina" value="4" id="option4"> <span>Çelik Konstrüksiyon</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Konutun Durumunu Seçiniz</p>
+            <li>
+                <input type="radio" name="konut" value="5" id="option5"> <span>Müstakil</span>
+            </li>
+            <li>
+                <input type="radio" name="konut" value="6" id="option6"> <span>Apartman Dairesi</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Binanızın Nizamını Seçiniz</p>
+            <li>
+                <input type="radio" name="nizam" value="7" id="option7"> <span>Bitişik</span>
+            </li>
+            <li>
+                <input type="radio" name="nizam" value="8" id="option8"> <span>Ayrık</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Bina Kat Sayısını Giriniz</p>
+            <input type="number" id="numberInput" name="kat" min="1" max="100" required placeholder="">
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Konutun Çatısını Seçiniz</p>
+            <li>
+                <input type="radio" name="cati" value="9" id="option9"> <span>Ahşap Doğrama Kiremit Çatı</span>
+            </li>
+            <li>
+                <input type="radio" name="cati" value="10" id="option10"> <span>Çelik Konstrüksiyon Çatı Kiremit</span>
+            </li>
+            <li>
+                <input type="radio" name="cati" value="11" id="option11"> <span>Teras</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Asansör Durumunu Seçiniz</p>
+            <li>
+                <input type="radio" name="asansor" value="12" id="option12"> <span>Asansör Var</span>
+            </li>
+            <li>
+                <input type="radio" name="asansor" value="13" id="option13"> <span>Asansör Yok</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Konut Metrekaresini Giriniz</p>
+            <input type="number" id="numberInput1" name="metrekare" min="1" required placeholder=""> <span>m2</span>
+        </ol>
+    </div>
+
+    <div class="buttons">
+        <button onclick="hesapla()">Hesapla</button>
+        <button onclick="sifirla()">Sıfırla</button>
+    </div>
+
+    <div class="yazdir" id="yazdir"></div>
+
+    <script>
+        function hesapla() {
+            const bina = document.querySelector('input[name="bina"]:checked');
+            const konut = document.querySelector('input[name="konut"]:checked');
+            const nizam = document.querySelector('input[name="nizam"]:checked');
+            const kat = document.getElementById("numberInput").value;
+            const cati = document.querySelector('input[name="cati"]:checked');
+            const asansor = document.querySelector('input[name="asansor"]:checked');
+            const metrekare = document.getElementById("numberInput1").value;
+
+            if (!bina || !konut || !nizam || !kat || !cati || !asansor || !metrekare) {
+                alert("Lütfen tüm alanları doldurun.");
+                return;
+            }
+
+            const total = (parseInt(bina.value) + parseInt(konut.value) + parseInt(nizam.value) + parseInt(cati.value) + parseInt(asansor.value)) * parseInt(kat) * parseInt(metrekare);
+
+            document.getElementById("yazdir").innerHTML = "Yukarıda Girilen Bilgilere Göre Sigorta Bedeli: " + total + " TL";
+        }
+
+        function sifirla() {
+            document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+            document.getElementById("numberInput").value = "";
+            document.getElementById("numberInput1").value = "";
+            document.getElementById("yazdir").innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
