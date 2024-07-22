@@ -4,286 +4,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Denizli'de üretilen en lezzetli ve doğal turşuları Tuba Turşu farkı ile keşfedin. Ege Bölgesi'nin en sevilen lezzetleri arasında ilk 10'da yer alıyor.">
-    <meta name="keywords" content="tubatursu, turşu, Denizli, Ege Bölgesi, lezzet, doğal, sağlıklı, Tuba, salatalık, biber, domates, acur, acı biber, çıtır, kütür, fasulye, pancar, lahana, havuç, mor, şalgam, turşu suyu, şalgam suyu, zerdali, çağla, hıyar, zeytin, zeytin yağı, tarhana, börülce, nohut, bulgur, mercimek, arpa, buğday, aşure, düğün, mevlüt, sünnet, nişan, özel, hamile, aş ermek, bebek, çocuk, genç, ihtiyar, turşu, turşu çeşitleri, lezzetli turşular, Türk mutfağı, geleneksel lezzetler, fabrika, tabldot, catering, toplu yemek, yemek firmaları, turşu kurma, salamura, asitli, asitsiz, limonlu, limon, limon tuzu, taze, ağzınıza layık, kıpır kıpır, şakşuka, meze, kokoreç, kebap, kuru biber, karışık, karışık turşu, kütür kütür, ezme, kornişon, tombul, acı sos, çizik, kırma, zeytin, soğan, yağlı acı biber, vietnam, zencefil, kelek, bamya, dolma, sirkeli, sirke">
-    <meta name="author" content="Nazif 05545890935">
-    <title>Tubatursu - En Lezzetli Turşular</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-<style>
-    .div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 5px;
-    }
+    <title>Sigorta Bedeli Hesaplama Sistemi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    .di {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-    }
+        .baslik1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    span {
-        padding: 4px;
-    }
+        .baslik {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 60%;
+            border-radius: 50px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
 
-    input,
-    span {
-        margin-top: 30px;
-        /* Ortak margin değeri */
-    }
+        .baslik h1 {
+            margin: 0;
+            font-size: 2em;
+        }
 
-    #hrr,
-    #arr,
-    #anarenk,
-    #ren {
-        display: none;
-    }
-</style>
+        .baslik h2 {
+            margin: 5px 0 0;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
 
+        .yapi {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
 
+        .yapi ol {
+            list-style: none;
+            padding: 0;
+            counter-reset: item;
+            /* Sayaç sıfırlama */
+        }
+
+        .yapi .asdasd {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .yapi ol li {
+            counter-increment: item;
+            /* Sayaç arttırma */
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .yapi ol li::before {
+            content: counter(item) "-) ";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .yapi ol li input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .yapi ol p {
+            font-weight: bolder;
+        }
+
+        .yazdir {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons button:disabled {
+            background-color: #cccccc;
+        }
+    </style>
 </head>
 
 <body>
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning ">
-        <div class="container">
-            <a class="navbar-brand" href="#anasayfa"><i id="anasayfa" class="fa-solid fa-pepper-hot"></i> TUBA TURŞU</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#anasayfa">AnaSayfa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ürün">Ürünlerimiz</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            İletişim
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#iletisim">Telefon</a></li>
-                            <li><a class="dropdown-item" href="#iletisim">Whatsapp</a></li>
-                            <li>
-                                <!-- <hr class="dropdown-divider"> -->
-                            </li>
-                            <li><a class="dropdown-item" href="#iletisim">Instagram</a></li>
-                            <li><a class="dropdown-item" href="#iletisim">Facebook</a></li>
-                            <li><a class="dropdown-item" href="#iletisim">Twitter</a></li>
-                        </ul>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li> -->
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Arama</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-    <div class="header">
-
-        <h2>1500 YILLIK DENEYİM İLE ÇOK YAKINDA HİZMETİNİZDE </h2>
-
-        <h2>1500 YILDIR DEĞİŞMEYEN LEZZET </h2>
-
-    </div>
-
-
-    <div class="orta_alan">
-        <div class="orta">
-            <div class="içerik">
-                <img id="ürün" src="./images/t1.jpeg" alt="">
-                <br>
-                <h3>SALATALIK TURŞUSU</h3>
-                <p>Salatalıkların sirke, su, tuz ve bazen baharatlar kullanılarak fermente edilmesiyle yapılan bir tür
-                    turşu çeşididir. Salatalık turşusu, taze salatalıkların lezzetini ve dokusunu korurken, fermente
-                    işlemi onlara ek bir tat ve ferahlatıcı bir hafiflik katmaktadır.</p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/t2.jpg" alt="">
-                <br>
-                <h3>JALAPONE BİBER TURŞUSU</h3>
-                <p>Acı ve baharatlı bir tat profiline sahip olan jalapeno biberlerinin sirke, tuz, su ve baharatlarla
-                    fermente edilmesiyle yapılan bir turşu türüdür. Jalapeno biberleri, Meksika mutfağında ve dünya
-                    genelinde birçok farklı yemekte kullanılır, ancak turşu halinde tüketildiklerinde ekstra bir lezzet
-                    katmanı elde edilir. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/t3.jpg" alt="">
-                <br>
-                <h3>DOMATES TURŞUSU</h3>
-                <p>Taze domateslerin sirke, tuz, su ve çeşitli baharatlar kullanılarak fermente edilerek yapılan bir
-                    turşu türüdür.</p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/t4.jpg" alt="">
-                <br>
-                <h3>FASULYE TURŞUSU</h3>
-                <p> Taze fasulyelerin sirke, tuz, su ve baharatlar kullanılarak fermente edilmesiyle yapılan bir turşu
-                    türüdür. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T5.jpg" alt="">
-                <br>
-                <h3>BİBERİYE TURŞUSU</h3>
-                <p>
-                    Biberiye turşusu, biberiye bitkisinin dallarının sirke, su, tuz ve bazen baharatlar kullanılarak
-                    fermente edilmesiyle yapılan bir turşu çeşididir. Biberiye, güçlü bir aromaya sahip bir bitki olduğu
-                    için turşu içerisinde benzersiz bir lezzet katmaktadır. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T6.jpg" alt="">
-                <br>
-                <h3>ACUR TURŞUSU</h3>
-                <p>Acur turşusu, acurların (yer elması) sirke, su, tuz ve baharatlar kullanılarak fermente edilmesiyle
-                    hazırlanan bir turşu çeşididir. Acur turşusu, özellikle fermente olma sürecinden dolayı zengin bir
-                    lezzet profiline sahiptir. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T7.jpg" alt="">
-                <br>
-                <h3>HAVUÇ TURŞUSU</h3>
-                <p>Havuç turşusu, havuçların sirke, su, tuz ve baharatlar kullanılarak fermente edilmesiyle hazırlanan
-                    lezzetli bir turşu çeşididir. Havuç turşusu, özellikle salatalarda, sandviçlerde veya yan yemek
-                    olarak kullanılarak renkli ve sağlıklı bir garnitür oluşturabilir.</p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T8.jpg" alt="">
-                <br>
-                <h3>MOR LAHANA TURŞUSU</h3>
-                <p> Mor lahana turşusu, mor lahananın sirke, su, tuz ve baharatlar kullanılarak fermente edilmesiyle
-                    yapılan lezzetli bir turşu çeşididir. Mor lahana turşusu, renkli ve sağlıklı bir garnitür olarak
-                    kullanılabilir. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T9.jpg" alt="">
-                <br>
-                <h3>PANCAR TURŞUSU</h3>
-                <p>
-                    Pancar turşusu, pancarların sirke, su, tuz ve bazen baharatlar kullanılarak fermente edilmesiyle
-                    yapılan bir turşu türüdür. Pancar turşusu, kırmızı veya sarı pancarların doğal rengini ve özel
-                    lezzetini korur. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T10.png" alt="">
-                <br>
-                <h3>KARIŞIK TURŞU</h3>
-                <p>
-                    Karışık turşu, farklı sebzelerin ve bazen baharatların bir araya getirilerek hazırlanan fermente
-                    edilmiş bir turşu çeşididir. Karışık turşu, farklı renklerde ve tatlarda sebzelerin birleşimiyle
-                    zengin bir lezzet profiline sahiptir. </p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T11.jpg" alt="">
-                <br>
-                <h3>SÜS BİBERİ TURŞUSU</h3>
-                <p>Süs biberi turşusu, genellikle renkli ve dekoratif süs biberlerinin sirke, su, tuz ve baharatlar
-                    kullanılarak fermente edilmesiyle yapılan bir turşu türüdür. Bu turşu, süs biberlerinin özel
-                    lezzetini ve renkli görünümünü korurken, fermente süreç sayesinde kendine özgü bir tat profiline
-                    sahip olabilir</p>
-            </div>
-        </div>
-        <div class="orta">
-            <div class="içerik">
-                <img src="./images/T12.jpg" alt="">
-                <br>
-                <h3>TATLI BİBER TURŞUSU</h3>
-                <p>
-                    "Tatlı Çiçek Biberi" , genellikle "Sweet Baby Bell Peppers" veya "Mini Sweet Peppers" olarak
-                    da bilinen küçük, renkli ve genellikle tatlı biberleri ifade eder. Bu biberler genellikle renkli,
-                    küçük boyutlu ve tatlı bir lezzete sahiptir. </p>
-            </div>
+    <div class="baslik1">
+        <div class="baslik">
+            <h1>Sigorta Bedeli Hesaplama Sistemi</h1>
+            <h2>Bina - Sivil Riziko</h2>
         </div>
     </div>
+    <div class="yapi">
+        <ol>
+            <p>Bina yapı tarzını seçiniz</p>
+            <li>
+                <input type="radio" name="bina" value="1" id="option1"> <span>Betonarme</span>
+            </li>
+            <li>
+                <input type="radio" name="bina" value="2" id="option2"> <span>Yığma Tuğla (Kerpiç)</span>
+            </li>
+            <li>
+                <input type="radio" name="bina" value="3" id="option3"> <span>Ahşap</span>
+            </li>
+            <li>
+                <input type="radio" name="bina" value="4" id="option4"> <span>Çelik Konstrüksiyon</span>
+            </li>
+        </ol>
+    </div>
 
+    <div class="yapi">
+        <ol>
+            <p>Konutun Durumunu Seçiniz</p>
+            <li>
+                <input type="radio" name="konut" value="5" id="option5"> <span>Müstakil</span>
+            </li>
+            <li>
+                <input type="radio" name="konut" value="6" id="option6"> <span>Apartman Dairesi</span>
+            </li>
+        </ol>
+    </div>
 
-    <footer>
-        <div class="list-group">
-            <a href="tel:+905071690066" class="list-group-item list-group-item-action list-group-item-primary" >
-                <i class="fa-solid fa-phone"> TELEFON</i>
-                <span class="text-hotline">+905071690066</span>                
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=905071690066&amp;text=Ürünler Hakkında Bilgi Almak İstiyorum" class="list-group-item list-group-item-action list-group-item-secondary" target="_blank"><i
-                    class="fa-brands fa-whatsapp"></i> Whatsapp</a>
-            <a id="iletisim" href="https://www.instagram.com/hsyn.gny.20?utm_source=qr&igsh=MWhkcWxtMHl6aXF6Mg=="
-                class="list-group-item list-group-item-action list-group-item-success" target="_blank"><i
-                    class="fa-brands fa-instagram"></i>Instagram</a>
-            <a href="https://www.facebook.com/DERBEDERDEREBEYLER?mibextid=ZbWKwL"
-                class="list-group-item list-group-item-action list-group-item-danger" target="_blank"><i
-                    class="fa-brands fa-facebook"></i>Facebook</a>
-            <a href="https://twitter.com/HseyinG12836843?t=Ln1jgkwwt8vDwisR-fvYXQ&s=09"
-                class="list-group-item list-group-item-action list-group-item-warning" target="_blank"><i
-                    class="fa-brands fa-x-twitter"></i>Twitter</a>
-            <div id="mapdiv"> <a href="#" id="maps" class=""><iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.247721471231!2d29.079214588742214!3d37.78423393938686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c73fb12c923739%3A0x619973d3f3777bc6!2sBayramyeri%20Meydan%C4%B1!5e0!3m2!1str!2str!4v1705404227056!5m2!1str!2str"
-                        width="300" height="103" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe></a></div>
-            <a href="#" class="list-group-item list-group-item-action"><i class="fa-solid fa-arrow-up"></i>BAŞA DÖN </a>
-        </div>
-    </footer>
+    <div class="yapi">
+        <ol>
+            <p>Binanızın Nizamını Seçiniz</p>
+            <li>
+                <input type="radio" name="nizam" value="7" id="option7"> <span>Bitişik</span>
+            </li>
+            <li>
+                <input type="radio" name="nizam" value="8" id="option8"> <span>Ayrık</span>
+            </li>
+        </ol>
+    </div>
 
+    <div class="yapi">
+        <ol>
+            <p>Bina Kat Sayısını Giriniz</p>
+            <input type="number" id="numberInput" name="kat" min="1" max="100" required placeholder="">
+        </ol>
+    </div>
 
+    <div class="yapi">
+        <ol>
+            <p>Konutun Çatısını Seçiniz</p>
+            <li>
+                <input type="radio" name="cati" value="9" id="option9"> <span>Ahşap Doğrama Kiremit Çatı</span>
+            </li>
+            <li>
+                <input type="radio" name="cati" value="10" id="option10"> <span>Çelik Konstrüksiyon Çatı Kiremit</span>
+            </li>
+            <li>
+                <input type="radio" name="cati" value="11" id="option11"> <span>Teras</span>
+            </li>
+        </ol>
+    </div>
 
+    <div class="yapi">
+        <ol>
+            <p>Asansör Durumunu Seçiniz</p>
+            <li>
+                <input type="radio" name="asansor" value="12" id="option12"> <span>Asansör Var</span>
+            </li>
+            <li>
+                <input type="radio" name="asansor" value="13" id="option13"> <span>Asansör Yok</span>
+            </li>
+        </ol>
+    </div>
 
+    <div class="yapi">
+        <ol>
+            <p>Konut Metrekaresini Giriniz</p>
+            <input type="number" id="numberInput1" name="metrekare" min="1" required placeholder=""> <span>m2</span>
+        </ol>
+    </div>
 
+    <div class="buttons">
+        <button onclick="hesapla()">Hesapla</button>
+        <button onclick="sifirla()">Sıfırla</button>
+    </div>
 
+    <div class="yazdir" id="yazdir"></div>
 
- 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
+    <script>
+        function hesapla() {
+            const bina = document.querySelector('input[name="bina"]:checked');
+            const konut = document.querySelector('input[name="konut"]:checked');
+            const nizam = document.querySelector('input[name="nizam"]:checked');
+            const kat = document.getElementById("numberInput").value;
+            const cati = document.querySelector('input[name="cati"]:checked');
+            const asansor = document.querySelector('input[name="asansor"]:checked');
+            const metrekare = document.getElementById("numberInput1").value;
+
+            if (!bina || !konut || !nizam || !kat || !cati || !asansor || !metrekare) {
+                alert("Lütfen tüm alanları doldurun.");
+                return;
+            }
+
+            const total = (parseInt(bina.value) + parseInt(konut.value) + parseInt(nizam.value) + parseInt(cati.value) + parseInt(asansor.value)) * parseInt(kat) * parseInt(metrekare);
+
+            document.getElementById("yazdir").innerHTML = "Yukarıda Girilen Bilgilere Göre Sigorta Bedeli: " + total + " TL";
+        }
+
+        function sifirla() {
+            document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+            document.getElementById("numberInput").value = "";
+            document.getElementById("numberInput1").value = "";
+            document.getElementById("yazdir").innerHTML = "";
+        }
+    </script>
 </body>
 
 </html>
