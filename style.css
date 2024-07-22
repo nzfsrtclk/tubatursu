@@ -127,6 +127,7 @@ h3:hover {
     border-radius: 15px;
     cursor: pointer;
     padding: 2%;
+    transform: scale(1.2);
 }
 
 p:hover {
@@ -136,6 +137,7 @@ p:hover {
     cursor: pointer;
     padding: 2%;
     font-size: 15px;
+    transform: scale(1.2);
 }
 
 
