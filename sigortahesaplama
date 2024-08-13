@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigorta Bedeli Hesaplama Sistemi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .baslik1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .baslik {
+            background: radial-gradient(circle, #1a64ee, #9fcdf1);  
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 60%;
+            border-radius: 50px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }
+
+        .baslik h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .baslik h2 {
+            margin: 5px 0 0;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        .yapi {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 30%;
+        }
+
+        .yapi ol {
+            list-style: none;
+            padding: -10px;
+            margin: -10px;
+            counter-reset: item;
+        }
+
+        .yapi ol li {
+            counter-increment: item;
+            margin: 10px 0;
+            padding-left: 25px;
+            padding-right: 25px;
+            position: relative;
+        }
+
+        #numberInput,
+        #numberInput1 {
+            counter-increment: item;
+            margin: 10px 0;
+            margin-bottom: 18px;
+            padding-left: 25px;
+            margin-left: 28px;
+            height: 28px;
+            padding-right: 55px;
+            position: relative;
+            width: 75%;
+            border-radius: 5px;
+            color: rgb(35, 120, 199);
+            border: 1px solid #84b1c5;
+            box-shadow: 10px 10px 30px #171818;
+            font-size: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        .yapi ol p {
+            font-weight: bolder;
+        }
+
+        .yazdir {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: radial-gradient(circle, #1a64ee, #9fcdf1);
+            color: white;
+            box-shadow: 5px 5px 15px #171818;
+            transition: background 3s, font-size 0.8s; /* Burada arka plan rengi için 1.5s, font boyutu için 0.5s süre verdik */
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .buttons button:hover{
+            font-size: 1.3rem;
+            background: radial-gradient(circle, #f1b50e, #ebe2af);
+        }
+
+        .buttons button:disabled {
+            background-color: #cccccc;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #84b1c5;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-shadow: 10px 10px 30px #171818;
+        }
+
+        .tarih {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-right: 1%;
+            font-size: 150%;
+            font-family: 'Times New Roman', Times, serif;
+            background: radial-gradient(circle, #1a64ee, #9fcdf1);            
+            color: rgb(255, 253, 253);
+            width: 50%;
+            border-radius: 30px;
+            flex-wrap: wrap;
+            height: 4vh;
+        }
+
+        .tarihKutusu {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            padding-right: 33%;            
+        }
+
+        .footer {
+            display: none;
+        }
+
+        @media print {
+
+            body {
+                margin-left: 0;
+                margin-top: 10px;
+                padding: 30px;
+                background-color: none;
+                display: flex;
+                justify-content: left;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+
+            .yapi {
+                width: 27%;
+                box-shadow: none;
+                margin: 3px;
+                flex-direction: row;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+            .baslik1 {
+                width: 100%;
+            }
+
+            .tarihKutusu {
+                justify-content: flex-start;
+                padding-right: 0;
+            }
+
+            .tarih {
+                width: auto;
+                border-radius: 0;
+                background-color: white;
+                color: #171818;
+            }
+
+            .tarihKutusu {
+                margin-bottom: 10px;
+                margin-left: 790px;
+                width: 80%;
+            }
+
+            .yazdir {
+                text-align: center;
+                width: 40%;
+                flex-direction: column;
+                margin-top: 250px;
+            }
+
+            select {
+                box-shadow: none;
+                width: 100%;
+            }
+
+            #numberInput,
+            #numberInput1 {
+                box-shadow: none;
+                width: 45%;
+                height: 33px;
+            }
+
+
+            .footer {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                text-align: right;
+                font-size: 0.8em;
+                color: #171818;
+                padding: 10px;
+                display: inline;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="baslik1">
+        <div class="baslik">
+            <h1>Sigorta Bedeli Hesaplama Sistemi</h1>
+            <h2>Bina - Sivil Riziko</h2>
+        </div>
+    </div>
+
+    <div class="tarihKutusu">
+        <div class="tarih">
+            <span class="gun"></span>/
+            <span class="ay"></span>/
+            <span class="yil"></span>
+        </div>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Bina yapı tarzını seçiniz</p>
+            <li>
+                <select name="bina" id="bina">
+                    <option value="" disabled selected>Seçiniz</option>
+                    <option value="1">Betonarme</option>
+                    <option value="2">Yığma Tuğla (Kerpiç)</option>
+                    <option value="3">Ahşap</option>
+                    <option value="4">Çelik Konstrüksiyon</option>
+                </select>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Konutun Durumunu Seçiniz</p>
+            <li>
+                <select name="konut" id="konut">
+                    <option value="" disabled selected>Seçiniz</option>
+                    <option value="5">Müstakil</option>
+                    <option value="6">Apartman Dairesi</option>
+                </select>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Binanızın Nizamını Seçiniz</p>
+            <li>
+                <select name="nizam" id="nizam">
+                    <option value="" disabled selected>Seçiniz</option>
+                    <option value="7">Bitişik</option>
+                    <option value="8">Ayrık</option>
+                </select>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Bina Kat Sayısını Giriniz</p>
+            <input type="number" id="numberInput" name="kat" min="1" max="100" required placeholder="">
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Konutun Çatısını Seçiniz</p>
+            <li>
+                <select name="cati" id="cati">
+                    <option value="" disabled selected>Seçiniz</option>
+                    <option value="9">Ahşap Doğrama Kiremit Çatı</option>
+                    <option value="10">Çelik Konstrüksiyon Çatı Kiremit</option>
+                    <option value="11">Teras</option>
+                </select>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Asansör Durumunu Seçiniz</p>
+            <li>
+                <select name="asansor" id="asansor">
+                    <option value="" disabled selected>Seçiniz</option>
+                    <option value="12">Asansör Var</option>
+                    <option value="13">Asansör Yok</option>
+                </select>
+            </li>
+        </ol>
+    </div>
+
+    <div class="yapi">
+        <ol>
+            <p>Konut Metrekaresini Giriniz</p>
+            <input type="number" id="numberInput1" name="metrekare" min="1" required placeholder="">
+        </ol>
+    </div>
+
+    <div class="buttons">
+        <button onclick="hesapla()">Hesapla</button>
+        <button onclick="sifirla()">Sıfırla</button>
+    </div>
+
+    <div class="yazdir" id="yazdir">
+
+    </div>
+
+    <div class="footer"> www.sigortabedelim.com.tr gibi bir şey yaz </div>
+
+    <div class="bosluk">
+
+    </div>
+
+    <script>
+
+        let yil = new Date();
+
+        document.querySelector(".gun").innerHTML = yil.getDate();
+        document.querySelector(".ay").innerHTML = yil.getMonth() + 1;
+        document.querySelector(".yil").innerHTML = yil.getFullYear();
+        document.querySelector(".saat").innerHTML = yil.getHours();
+        document.querySelector(".dakika").innerHTML = yil.getMinutes();
+
+        function hesapla() {
+            const fields = [
+                document.getElementById('bina'),
+                document.getElementById('konut'),
+                document.getElementById('nizam'),
+                document.getElementById("numberInput"),
+                document.getElementById('cati'),
+                document.getElementById('asansor'),
+                document.getElementById("numberInput1")
+            ];
+
+            let isValid = true; // Formun geçerliliğini kontrol etmek için
+
+            // Alanları sırasıyla kontrol edelim
+            fields.forEach(field => {                       // function(field) ile aynı field=> 
+                if (!field.value) {
+                    // Boş olan alanı vurgulayın
+                    field.style.borderColor = "red";
+                    field.style.borderWidth = "3px";
+                    field.style.borderRadius = "3px";
+
+                    isValid = false; // Boş alan varsa geçerli değil
+                } else {
+                    // Dolmuş olan alanın stilini eski haline getirin
+                    field.style.borderColor = "#84b1c5";
+                    field.style.borderWidth = "1px";
+                    field.style.borderRadius = "5px";
+                }
+            });
+
+            // Eğer herhangi bir alan boşsa uyarı verin ve formu göndermeyin
+            if (!isValid) {
+                alert("Lütfen tüm alanları doldurun.");
+                return;
+            }
+
+            // Hesaplama işlemi
+            const total = (parseInt(fields[0].value)
+                + parseInt(fields[1].value)
+                + parseInt(fields[2].value)
+                + parseInt(fields[4].value)
+                + parseInt(fields[5].value))
+                * parseInt(fields[3].value)
+                * parseInt(fields[6].value);
+
+            document.getElementById("yazdir").innerHTML = "Yukarıda Girilen Bilgilere Göre Tavsiye Edilen Sigorta Bedeli: "
+                + total + " TL";
+        }
+
+        function sifirla() {
+            document.querySelectorAll('select').forEach(select => {
+                select.selectedIndex = 0;
+                select.style.borderColor = "#84b1c5"; // Çerçeve rengini sıfırlayın
+                select.style.borderWidth = "1px";     // Çerçeve kalınlığını sıfırlayın
+                select.style.borderRadius = "5px";    // Köşeleri sıfırlayın
+            });
+            document.getElementById("numberInput").value = "";
+            document.getElementById("numberInput1").value = "";
+            document.getElementById("numberInput").style.borderColor = "#84b1c5"; // Çerçeve rengini sıfırlayın
+            document.getElementById("numberInput").style.borderWidth = "1px";     // Çerçeve kalınlığını sıfırlayın
+            document.getElementById("numberInput").style.borderRadius = "5px";    // Köşeleri sıfırlayın
+            document.getElementById("numberInput1").style.borderColor = "#84b1c5";// Çerçeve rengini sıfırlayın
+            document.getElementById("numberInput1").style.borderWidth = "1px";    // Çerçeve kalınlığını sıfırlayın
+            document.getElementById("numberInput1").style.borderRadius = "5px";   // Köşeleri sıfırlayın
+            document.getElementById("yazdir").innerHTML = "";
+        }
+
+    </script>
+</body>
+
+</html>
