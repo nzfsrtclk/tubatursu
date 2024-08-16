@@ -20,7 +20,7 @@
         }
 
         .baslik {
-            background: radial-gradient(circle, #1a64ee, #9fcdf1);  
+            background: radial-gradient(circle, #1a64ee, #9fcdf1);
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -65,6 +65,16 @@
             padding-left: 25px;
             padding-right: 25px;
             position: relative;
+            list-style-type: none;
+            transition: 0.5s;
+            display: list-item;
+        }
+
+        .liBina:hover {
+            background-color: #84b1c5;
+            border-radius: 5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
         }
 
         #numberInput,
@@ -112,11 +122,12 @@
             background: radial-gradient(circle, #1a64ee, #9fcdf1);
             color: white;
             box-shadow: 5px 5px 15px #171818;
-            transition: background 3s, font-size 0.8s; /* Burada arka plan rengi için 1.5s, font boyutu için 0.5s süre verdik */
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            transition: background 3s, font-size 0.8s;
+            /* Burada arka plan rengi için 1.5s, font boyutu için 0.5s süre verdik */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        .buttons button:hover{
+        .buttons button:hover {
             font-size: 1.3rem;
             background: radial-gradient(circle, #8ac8ec, #0a6faa);
         }
@@ -144,7 +155,7 @@
             padding-right: 1%;
             font-size: 150%;
             font-family: 'Times New Roman', Times, serif;
-            background: radial-gradient(circle, #1a64ee, #9fcdf1);            
+            background: radial-gradient(circle, #1a64ee, #9fcdf1);
             color: rgb(255, 253, 253);
             width: 50%;
             border-radius: 30px;
@@ -156,7 +167,7 @@
             display: flex;
             flex-direction: row;
             justify-content: end;
-            padding-right: 33%;            
+            padding-right: 33%;
         }
 
         .footer {
@@ -260,16 +271,172 @@
         </div>
     </div>
 
+    <div class="yapi" id="byapi">
+        <ol>
+            <p>Bina Yapı Tarzını Seçiniz.</p>
+            <!-- 1. sınıf a grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="1450"> Kagir veya betonarme ihata duvarı. (
+                    0-3 metre
+                    arası ).</label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="1450"> Basit kümes ve basit tarım
+                    yapıları.</label></li>
+            <!-- 1. sınıf b grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="2100"> Kagir veya betonarme su
+                    depoları.</label></li>
+            <!-- 2. sınıf a grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="3500"> Kuleler, ayaklı su depoları.
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="3500"> Palplanj ve ankrajlı perde ve
+                    istinat duvarları.
+                </label></li>
+            <!-- 2. sınıf b grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="5250"> Tarımsal Endüstri Yapıları ( Tek
+                    katlı, prefabrik
+                    beton, betonarme veya çelik depo ve atölyeler, tesisat ağırlıklı ağıllar, fidan yetiştirme ve
+                    bekletme tesisleri). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="5250"> Mezbahalar. </label></li>
+            <!-- 2. sınıf c grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="7750"> Sanayi yapıları. ( Tek katlı, bodrum
+                    ve asma katı
+                    da olabilen). </label></li>
+            <!-- 3. sınıf a grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Okul ve mahalle spor tesisleri.
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Katlı garajlar.</label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Ticari amaçlı binalar. ( 0-3 kat
+                    asansörsüz ).
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Alışveriş merkezleri. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Basım evleri matbaalar. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Soğuk hava depoları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Konutlar. ( 0-3 kat asansörsüz ).
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Akaryakıt ve gaz istasyonları.
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="12250"> Kreş ve gündüz bakımevleri,hobi ve
+                    oyun salonları.
+                </label></li>
+            <!-- 3. sınıf b grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="14400"> Entegre tarımsal endüstri yapıları,
+                    büyük çiftlik
+                    yapıları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="14400"> Lokanta, kafeterya ve yemekhaneler.
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="14400"> Temel eğitim okulları. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="14400"> Ticari amaçlı binalar. ( Yapı
+                    yüksekliği 21,50
+                    metreye kadar olan). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="14400"> Konutlar. ( Yapı yüksekliği 21,50
+                    metre'den az
+                    yapılar). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="14400"> Gece kulübü, diskotekler. </label>
+            </li>
+            <!-- 4. sınıf a grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Özelliği olan büyük okul yapıları.
+                    ( Spor salonu,
+                    konferans salonu ve ek tesisleri olan eğitim yapıları).</label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Poliklinikler. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Liman binaları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Kaplıcalar, şifa evleri ve benzeri
+                    termal
+                    tesisleri. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Aqua parklar. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Entegre sanayi tesisleri. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Müstakil spor köyleri. ( Yüzme
+                    havuzları, spor
+                    salonları ve statları bulunan ). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Yaşlılar huzurevi, kimsesiz çocuk
+                    yuvaları,
+                    yetiştirme yurtları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Büyük alışveriş merkezleri.
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Yüksek okullar ve eğitim
+                    enstitüleri. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Apartman tipi konutlar. ( Yapı
+                    yüksekliği 30,5
+                    metreden az yapılar ). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="15300"> Oteller. ( 1 ve 2 yıldızlı ).
+                </label></li>
+            <!-- 4. sınıf b grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="17400"> Otobüs terminalleri. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="17400"> Eğlence amaçlı yapılar. ( Çok
+                    amaçlı toplantı,
+                    eğlence ve düğün salonları ). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="17400"> Banka binaları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="17400"> Normal radyo ve televizyon
+                    binaları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="17400"> Müstakil veya ikiz konutlar (
+                    Bağımsız bölüm brüt
+                    alanı 151 m<sup>2</sup>- 600 m<sup>2</sup> villalar,teras evleri, dağ evleri, kaymakam evi ve
+                    benzeri ). </label></li>
+            <!-- 4. sınıf c grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="18700"> Yüksek öğrenim yurtları. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="18700"> Otel ( 3 yıldızlı ) ve moteller.
+                </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="18700"> Rehabilitasyon ve tedavi
+                    merkezleri. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="18700"> İş merkezleri ( Yapı yüksekliği
+                    21,50 m. ile 30,51
+                    m. arası ). </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="18700"> Konutlar ( Yapı yüksekliği 30,5 m.
+                    ile 51,51 m.
+                    arası ). </label></li>
+            <!-- 5. sınıf a grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> Televizyon, radyo istasyonları,
+                    binaları. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> Büyükelçilik yapıları, vali
+                    konakları ve brüt 600
+                    m<sup>2</sup> üzerindeki özel konutlar. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> Borsa binaları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> Üniversite kampüsleri. </label>
+            </li>
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> İş merkezleri. ( Yapı yüksekliği
+                    30,5 m. aşan
+                    yapılar. ) </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> Yapı yüksekliği 51,50 m. yi aşan
+                    yapılar. (
+                    Konutlar dahil. ) </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="21300"> Alışveriş kompleksleri. (
+                    İçerisinde sinema,
+                    tiyatro, sergi salonu, kafe, restoran, market ve benzeri bulunan. ) </label></li>
+            <!-- 5. sınıf b grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="22250"> Kongre merkezleri. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="22250"> Hastaneler. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="22250"> Havalimanları. </label></li>
+            <li class="liBina"><label><input type="radio" name="bina" value="22250"> Oteller. ( 4 yıldızlı. ) </label>
+            </li>
+            <!-- 5. sınıf c grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="24300"> Oteller ve tatil köyleri. ( 5
+                    yıldızlı. ) </label>
+            </li>
+            <!-- 5. sınıf d grubu -->
+            <li class="liBina"><label><input type="radio" name="bina" value="26800"> Tarihi eser niteliğinde olup
+                    restore edilerek veya
+                    yıkılarak aslına uygun olarak yapılan yapılar. </label>
+
+        </ol>
+        <div class="buttons">
+            <button onclick="göster()">Tümünü Göster</button>
+            <!-- <button onclick="gizle()">Seçim Sonrası Gizle</button> -->
+        </div>
+    </div>
+
     <div class="yapi">
         <ol>
-            <p>Bina yapı tarzını seçiniz</p>
+            <p>Bina Yapı Tarzını Seçiniz</p>
             <li>
-                <select name="bina" id="bina">
+                <select name="bina2" id="bina2">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="1">Betonarme</option>
-                    <option value="2">Yığma Tuğla (Kerpiç)</option>
-                    <option value="3">Ahşap</option>
-                    <option value="4">Çelik Konstrüksiyon</option>
+                    <option value="">Betonarme</option>
+                    <option value="">Yığma Tuğla (Kerpiç)</option>
+                    <option value="">Ahşap</option>
+                    <option value="">Çelik Konstrüksiyon</option>
                 </select>
             </li>
         </ol>
@@ -281,8 +448,8 @@
             <li>
                 <select name="konut" id="konut">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="5">Müstakil</option>
-                    <option value="6">Apartman Dairesi</option>
+                    <option value="">Müstakil</option>
+                    <option value="">Apartman Dairesi</option>
                 </select>
             </li>
         </ol>
@@ -294,19 +461,18 @@
             <li>
                 <select name="nizam" id="nizam">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="7">Bitişik</option>
-                    <option value="8">Ayrık</option>
+                    <option value="">Bitişik</option>
+                    <option value="">Ayrık</option>
                 </select>
             </li>
         </ol>
     </div>
-
-    <div class="yapi">
+    <!-- <div class="yapi">
         <ol>
             <p>Bina Kat Sayısını Giriniz</p>
             <input type="number" id="numberInput" name="kat" min="1" max="100" required placeholder="">
         </ol>
-    </div>
+    </div> -->
 
     <div class="yapi">
         <ol>
@@ -314,9 +480,9 @@
             <li>
                 <select name="cati" id="cati">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="9">Ahşap Doğrama Kiremit Çatı</option>
-                    <option value="10">Çelik Konstrüksiyon Çatı Kiremit</option>
-                    <option value="11">Teras</option>
+                    <option value="">Ahşap Doğrama Kiremit Çatı</option>
+                    <option value="">Çelik Konstrüksiyon Çatı Kiremit</option>
+                    <option value="">Teras</option>
                 </select>
             </li>
         </ol>
@@ -328,8 +494,8 @@
             <li>
                 <select name="asansor" id="asansor">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="12">Asansör Var</option>
-                    <option value="13">Asansör Yok</option>
+                    <option value="">Asansör Var</option>
+                    <option value="">Asansör Yok</option>
                 </select>
             </li>
         </ol>
@@ -364,74 +530,103 @@
         document.querySelector(".gun").innerHTML = yil.getDate();
         document.querySelector(".ay").innerHTML = yil.getMonth() + 1;
         document.querySelector(".yil").innerHTML = yil.getFullYear();
-        document.querySelector(".saat").innerHTML = yil.getHours();
-        document.querySelector(".dakika").innerHTML = yil.getMinutes();
 
         function hesapla() {
-            const fields = [
-                document.getElementById('bina'),
-                document.getElementById('konut'),
-                document.getElementById('nizam'),
-                document.getElementById("numberInput"),
-                document.getElementById('cati'),
-                document.getElementById('asansor'),
-                document.getElementById("numberInput1")
-            ];
+            // 'bina' adıyla tanımlanmış radyo düğmelerinden seçili olanını bul
+            let selectedValue = document.querySelector('input[name="bina"]:checked').value;
+            let bina2 = document.querySelector("#bina2").value;
+            let konut = document.querySelector("#konut").value;
+            let nizam = document.querySelector("#nizam").value;
+            let cati = document.querySelector("#cati").value;
+            let asansor = document.querySelector("#asansor").value;
+            let numberInput1 = document.querySelector("#numberInput1").value;
 
-            let isValid = true; // Formun geçerliliğini kontrol etmek için
+            let total = selectedValue * numberInput1;
 
-            // Alanları sırasıyla kontrol edelim
-            fields.forEach(field => {                       // function(field) ile aynı field=> 
-                if (!field.value) {
-                    // Boş olan alanı vurgulayın
-                    field.style.borderColor = "red";
-                    field.style.borderWidth = "3px";
-                    field.style.borderRadius = "3px";
+            function sayiyiBindelikBol(total) {
+                let sayiStr = total.toString();
+                let bindelik = "";
 
-                    isValid = false; // Boş alan varsa geçerli değil
-                } else {
-                    // Dolmuş olan alanın stilini eski haline getirin
-                    field.style.borderColor = "#84b1c5";
-                    field.style.borderWidth = "1px";
-                    field.style.borderRadius = "5px";
+                while (sayiStr.length > 3) {
+                    bindelik = "." + sayiStr.slice(-3) + bindelik;
+                    sayiStr = sayiStr.slice(0, -3);
                 }
-            });
 
-            // Eğer herhangi bir alan boşsa uyarı verin ve formu göndermeyin
-            if (!isValid) {
-                alert("Lütfen tüm alanları doldurun.");
-                return;
+                bindelik = sayiStr + bindelik;
+
+                return bindelik;
             }
 
-            // Hesaplama işlemi
-            const total = (parseInt(fields[0].value)
-                + parseInt(fields[1].value)
-                + parseInt(fields[2].value)
-                + parseInt(fields[4].value)
-                + parseInt(fields[5].value))
-                * parseInt(fields[3].value)
-                * parseInt(fields[6].value);
+            // Bindelik hale getirilmiş sonucu alıyoruz
+            let bolunmus = sayiyiBindelikBol(total);
 
+            // Sonucu ekrana yazdırıyoruz
             document.getElementById("yazdir").innerHTML = "Yukarıda Girilen Bilgilere Göre Tavsiye Edilen Sigorta Bedeli: "
-                + total + " TL";
+                + bolunmus + " TL";
         }
 
-        function sifirla() {
-            document.querySelectorAll('select').forEach(select => {
-                select.selectedIndex = 0;
-                select.style.borderColor = "#84b1c5"; // Çerçeve rengini sıfırlayın
-                select.style.borderWidth = "1px";     // Çerçeve kalınlığını sıfırlayın
-                select.style.borderRadius = "5px";    // Köşeleri sıfırlayın
+
+        function göster() {
+            document.querySelectorAll(".liBina").forEach(function (item) {
+                item.style.display = "list-item";
             });
-            document.getElementById("numberInput").value = "";
-            document.getElementById("numberInput1").value = "";
-            document.getElementById("numberInput").style.borderColor = "#84b1c5"; // Çerçeve rengini sıfırlayın
-            document.getElementById("numberInput").style.borderWidth = "1px";     // Çerçeve kalınlığını sıfırlayın
-            document.getElementById("numberInput").style.borderRadius = "5px";    // Köşeleri sıfırlayın
-            document.getElementById("numberInput1").style.borderColor = "#84b1c5";// Çerçeve rengini sıfırlayın
-            document.getElementById("numberInput1").style.borderWidth = "1px";    // Çerçeve kalınlığını sıfırlayın
-            document.getElementById("numberInput1").style.borderRadius = "5px";   // Köşeleri sıfırlayın
-            document.getElementById("yazdir").innerHTML = "";
+        }
+
+        function gizle() {
+            document.querySelectorAll(".liBina").forEach(function (item) {
+                if (!item.querySelector("input").checked) {
+                    item.style.display = "none";
+                } else {
+                    item.style.display = ""; // Gösterilmeye devam etmesi için varsayılan stil ayarla
+                }
+            });
+        }
+
+        document.querySelectorAll(".liBina input").forEach(function (checkbox) {
+            checkbox.addEventListener('change', gizle);
+        });
+
+        // Sayfa yüklendiğinde gizle fonksiyonunu çağırarak mevcut durumu ayarla
+        gizle();
+
+
+
+
+        ////////   kaldık    
+        function help(){
+            let uyari =[
+            document.querySelector("#bina2"),
+            document.querySelector("#bina2"),
+            document.querySelector("#konut"),
+            document.querySelector("#nizam"),
+            document.querySelector("#cati"),
+            document.querySelector("#asansor"),
+            document.querySelector("#numberInput1"),
+
+            ];
+        }
+
+
+
+        function sifirla() {
+
+            // Seçili radyo butonunu seç
+            var checkedRadio = document.querySelector('input[name="bina"]:checked');
+            if (checkedRadio) {
+                checkedRadio.checked = false;  // Radyo butonunu seçme iptali
+            }
+
+            document.querySelectorAll(".liBina").forEach(function (item) {
+                item.style.display = "list-item";
+            });
+
+            document.querySelector("#bina2").value = "";
+            document.querySelector("#konut").value = "";
+            document.querySelector("#nizam").value = "";
+            document.querySelector("#cati").value = "";
+            document.querySelector("#asansor").value = "";
+            document.querySelector("#numberInput1").value = "";
+            document.querySelector("#yazdir").innerHTML = "";
         }
 
     </script>
