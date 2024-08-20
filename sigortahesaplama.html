@@ -110,6 +110,9 @@
         .buttons {
             text-align: center;
             margin-top: 20px;
+            width: 85%;
+            margin-left: 10%;
+            border-radius: 5px;
         }
 
         .buttons button {
@@ -173,6 +176,8 @@
         .footer {
             display: none;
         }
+
+
 
         @media print {
 
@@ -274,6 +279,9 @@
     <div class="yapi" id="byapi">
         <ol>
             <p>Bina Yapı Tarzını Seçiniz.</p>
+            <li class="liBina" style="display: none;"><label><input type="radio" name="bina" value=""
+                        style="display: none;"></label></li>
+
             <!-- 1. sınıf a grubu -->
             <li class="liBina"><label><input type="radio" name="bina" value="1450"> Kagir veya betonarme ihata duvarı. (
                     0-3 metre
@@ -421,7 +429,7 @@
                     yıkılarak aslına uygun olarak yapılan yapılar. </label>
 
         </ol>
-        <div class="buttons">
+        <div class="buttons" id="gösterBtn">
             <button onclick="göster()">Tümünü Göster</button>
             <!-- <button onclick="gizle()">Seçim Sonrası Gizle</button> -->
         </div>
@@ -433,10 +441,10 @@
             <li>
                 <select name="bina2" id="bina2">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="">Betonarme</option>
-                    <option value="">Yığma Tuğla (Kerpiç)</option>
-                    <option value="">Ahşap</option>
-                    <option value="">Çelik Konstrüksiyon</option>
+                    <option value="1">Betonarme</option>
+                    <option value="1">Yığma Tuğla (Kerpiç)</option>
+                    <option value="1">Ahşap</option>
+                    <option value="1">Çelik Konstrüksiyon</option>
                 </select>
             </li>
         </ol>
@@ -448,8 +456,8 @@
             <li>
                 <select name="konut" id="konut">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="">Müstakil</option>
-                    <option value="">Apartman Dairesi</option>
+                    <option value="1">Müstakil</option>
+                    <option value="1">Apartman Dairesi</option>
                 </select>
             </li>
         </ol>
@@ -461,8 +469,8 @@
             <li>
                 <select name="nizam" id="nizam">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="">Bitişik</option>
-                    <option value="">Ayrık</option>
+                    <option value="1">Bitişik</option>
+                    <option value="1">Ayrık</option>
                 </select>
             </li>
         </ol>
@@ -480,9 +488,9 @@
             <li>
                 <select name="cati" id="cati">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="">Ahşap Doğrama Kiremit Çatı</option>
-                    <option value="">Çelik Konstrüksiyon Çatı Kiremit</option>
-                    <option value="">Teras</option>
+                    <option value="1">Ahşap Doğrama Kiremit Çatı</option>
+                    <option value="1">Çelik Konstrüksiyon Çatı Kiremit</option>
+                    <option value="1">Teras</option>
                 </select>
             </li>
         </ol>
@@ -494,8 +502,8 @@
             <li>
                 <select name="asansor" id="asansor">
                     <option value="" disabled selected>Seçiniz</option>
-                    <option value="">Asansör Var</option>
-                    <option value="">Asansör Yok</option>
+                    <option value="1">Asansör Var</option>
+                    <option value="1">Asansör Yok</option>
                 </select>
             </li>
         </ol>
@@ -532,39 +540,76 @@
         document.querySelector(".yil").innerHTML = yil.getFullYear();
 
         function hesapla() {
-            // 'bina' adıyla tanımlanmış radyo düğmelerinden seçili olanını bul
-            let selectedValue = document.querySelector('input[name="bina"]:checked').value;
-            let bina2 = document.querySelector("#bina2").value;
-            let konut = document.querySelector("#konut").value;
-            let nizam = document.querySelector("#nizam").value;
-            let cati = document.querySelector("#cati").value;
-            let asansor = document.querySelector("#asansor").value;
-            let numberInput1 = document.querySelector("#numberInput1").value;
 
-            let total = selectedValue * numberInput1;
+            // Form alanlarını seç
+            const alanlar = [
+                document.querySelector("#bina2"),
+                document.querySelector("#konut"),
+                document.querySelector("#nizam"),
+                document.querySelector("#cati"),
+                document.querySelector("#asansor"),
+                document.querySelector("#numberInput1")
+            ];
 
-            function sayiyiBindelikBol(total) {
-                let sayiStr = total.toString();
-                let bindelik = "";
+            // Boş alanları kontrol et
+            let bosAlanVarMi = false;
+            let secimYapildiMi = false;
 
-                while (sayiStr.length > 3) {
-                    bindelik = "." + sayiStr.slice(-3) + bindelik;
-                    sayiStr = sayiStr.slice(0, -3);
+            alanlar.forEach((alan) => {
+                if (alan.value.trim() === "") {
+                    bosAlanVarMi = true;
+                    alan.style.border = "3px solid red"; // Boş alanın kenarlığını kırmızı yap
+                } else {
+                    alan.style.border = ""; // Alan doluysa kenarlığı sıfırla
                 }
+            });
 
-                bindelik = sayiStr + bindelik;
+            // "Tümünü Göster" butonunun durumunu kontrol et
+            let binaRadioButtons = document.querySelectorAll('input[name="bina"]');
+            binaRadioButtons.forEach((button) => {
+                if (button.checked) {
+                    secimYapildiMi = true;
+                }
+            });
 
-                return bindelik;
+            let gösterBtn = document.querySelector("#gösterBtn");
+            if (!secimYapildiMi) {
+                gösterBtn.style.border = "3px solid red";
+            } else {
+                gösterBtn.style.border = ""; // Eğer bir seçim yapıldıysa çerçeveyi sıfırla
             }
 
-            // Bindelik hale getirilmiş sonucu alıyoruz
-            let bolunmus = sayiyiBindelikBol(total);
+            if (bosAlanVarMi || !secimYapildiMi) {
+                alert("Tüm alanları doldurun...");
+                return; // Fonksiyonu durdur
+            }
 
-            // Sonucu ekrana yazdırıyoruz
-            document.getElementById("yazdir").innerHTML = "Yukarıda Girilen Bilgilere Göre Tavsiye Edilen Sigorta Bedeli: "
-                + bolunmus + " TL";
+            // Bina yapı tarzı seçimini al
+            let selectedValue = document.querySelector('input[name="bina"]:checked');
+            let numberInput1 = document.querySelector("#numberInput1").value.trim();
+
+            if (selectedValue) {
+                let total = Number(selectedValue.value) * Number(numberInput1);
+
+                function sayiyiBindelikBol(total) {
+                    let sayiStr = total.toString();
+                    let bindelik = "";
+
+                    while (sayiStr.length > 3) {
+                        bindelik = "." + sayiStr.slice(-3) + bindelik;
+                        sayiStr = sayiStr.slice(0, -3);
+                    }
+
+                    bindelik = sayiStr + bindelik;
+                    return bindelik;
+                }
+
+                let bolunmus = sayiyiBindelikBol(total);
+                document.getElementById("yazdir").innerHTML = "Yukarıda Girilen Bilgilere Göre Tavsiye Edilen Sigorta Bedeli: " + bolunmus + " TL";
+            } else {
+                alert("Lütfen bina yapı tarzını seçiniz.");
+            }
         }
-
 
         function göster() {
             document.querySelectorAll(".liBina").forEach(function (item) {
@@ -589,25 +634,6 @@
         // Sayfa yüklendiğinde gizle fonksiyonunu çağırarak mevcut durumu ayarla
         gizle();
 
-
-
-
-        ////////   kaldık    
-        function help(){
-            let uyari =[
-            document.querySelector("#bina2"),
-            document.querySelector("#bina2"),
-            document.querySelector("#konut"),
-            document.querySelector("#nizam"),
-            document.querySelector("#cati"),
-            document.querySelector("#asansor"),
-            document.querySelector("#numberInput1"),
-
-            ];
-        }
-
-
-
         function sifirla() {
 
             // Seçili radyo butonunu seç
@@ -617,7 +643,7 @@
             }
 
             document.querySelectorAll(".liBina").forEach(function (item) {
-                item.style.display = "list-item";
+                item.style.display = "none";
             });
 
             document.querySelector("#bina2").value = "";
@@ -627,6 +653,26 @@
             document.querySelector("#asansor").value = "";
             document.querySelector("#numberInput1").value = "";
             document.querySelector("#yazdir").innerHTML = "";
+
+            // -------------------------------
+            let formElements = [
+                document.querySelector('input[name="bina"]'),
+                document.querySelector("#bina2"),
+                document.querySelector("#konut"),
+                document.querySelector("#nizam"),
+                document.querySelector("#cati"),
+                document.querySelector("#asansor"),
+                document.querySelector("#numberInput1"),
+                document.querySelector("#gösterBtn")
+            ];
+
+            formElements.forEach(el => {
+                if (el) {
+                    el.style.borderColor = "white";
+                    el.style.borderWidth = "1px";
+                    el.style.borderRadius = "5px";
+                }
+            });
         }
 
     </script>
