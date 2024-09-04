@@ -26,7 +26,13 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
         const yapi9 = document.getElementById("yapi9");            //  NİZAM
         const yapi10 = document.getElementById("yapi10");          //  ÇATI
         const yapi19 = document.getElementById("yapi19");          //  DİĞER YAPI TİPLERİ
-
+        const yapi18 = document.getElementById("yapi18");          //  ASANSÖR VAR YOK 
+        const yapi20 = document.getElementById("yapi20");          //  İŞ YERİ TİPLERİ
+        const yapi13 = document.getElementById("yapi13");          //  BİNA DURUMU
+        const yapi14 = document.getElementById("yapi14");          //  KAT SAYISI 
+        const yapi15 = document.getElementById("yapi15");          //  NİZAM
+        const yapi16 = document.getElementById("yapi16");          //  ÇATI
+        const yapi17 = document.getElementById("yapi17");          //  BİNA YAPI TARZI - BETONARME - YIĞMA TUĞLA - AHŞAP - ÇELİK KONSTRÜKSİYON
 
         if (seçilentip === 'yapitipi1') {
             centerid.classList.remove("no-yapi");
@@ -45,7 +51,7 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             yapi4.classList.add("no-yapi");
             yapi5.classList.add("no-yapi");
             yapi6.classList.add("no-yapi");
-           // yapi7.classList.add("no-yapi");
+            // yapi7.classList.add("no-yapi");
             yapi8.classList.add("no-yapi");
             yapi9.classList.add("no-yapi");
             yapi10.classList.add("no-yapi");
@@ -55,29 +61,13 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             yapi4.classList.remove("no-yapi");
             yapi5.classList.remove("no-yapi");
             yapi6.classList.remove("no-yapi");
-           // yapi7.classList.remove("no-yapi");
+            // yapi7.classList.remove("no-yapi");
             yapi8.classList.remove("no-yapi");
             yapi9.classList.remove("no-yapi");
-            yapi10.classList.remove("no-yapi");            
+            yapi10.classList.remove("no-yapi");
         };
-    });
-});
 
-
-document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
-    radio.addEventListener('change', function () {
-
-        let seçilentip2 = document.querySelector('input[name="binatipi"]:checked').value;
-
-        const yapi18 = document.getElementById("yapi18");          //  ASANSÖR VAR YOK 
-        const yapi20 = document.getElementById("yapi20");          //  İŞ YERİ TİPLERİ
-        const yapi13 = document.getElementById("yapi13");          //  BİNA DURUMU
-        const yapi14 = document.getElementById("yapi14");          //  KAT SAYISI 
-        const yapi15 = document.getElementById("yapi15");          //  NİZAM
-        const yapi16 = document.getElementById("yapi16");          //  ÇATI
-        const yapi17 = document.getElementById("yapi17");          //  BİNA YAPI TARZI - BETONARME - YIĞMA TUĞLA - AHŞAP - ÇELİK KONSTRÜKSİYON
-
-        if (seçilentip2 === 'yapitipi3') {
+        if (seçilentip === 'yapitipi3') {
             centerid.classList.remove("no-yapi");
             yapi18.classList.add("no-yapi");
             yapi20.classList.add("no-yapi");
@@ -99,14 +89,13 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
 
 });
 
-
 document.getElementById('konut').addEventListener('change', function () {
 
     let selectedOption = this.options[this.selectedIndex];
 
     let selectedId = selectedOption.id;
 
-  //  const yapi11 = document.getElementById("yapi11");
+    //  const yapi11 = document.getElementById("yapi11");
 
     if (selectedId === 'yapi11') {
         yapi7.classList.add("no-yapi");
@@ -125,18 +114,17 @@ document.getElementById('konut').addEventListener('change', function () {
     };
 });
 
-document.getElementById('isyeri').addEventListener('change', function() {
+document.getElementById('isyeri').addEventListener('change', function () {
 
     let seçilenişyeri = this.options[this.selectedIndex];
-    let seçilenişyeriİd = seçilenişyeri.id; // doğru değişken
+    let seçilenişyeriİd = seçilenişyeri.id; 
 
-    // işyeriid2 olarak id'ye sahip olan elementi seçiyoruz
-    let işyeriid2Element = document.getElementById('işyeriid2'); 
+    let işyeriid2Element = document.getElementById('işyeriid2');
 
-    if (seçilenişyeriİd === 'işyeriid2') { // Değer kontrolü
-        işyeriid2Element.classList.add("no-yapi"); // "no-yapi" sınıfını kaldır
+    if (seçilenişyeriİd !== 'işyeriid1') {
+        işyerikat.classList.add("no-yapi");
     } else {
-        işyeriid2Element.classList.remove("işyerikat"); // "işyerikat" sınıfını ekle
+        işyerikat.classList.remove("no-yapi");
     }
 });
 
