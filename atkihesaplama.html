@@ -1,99 +1,140 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atki Hesaplama</title>
+    <title>Document</title>
 </head>
+<style>
+    .div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .di {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    span {
+        padding: 4px;
+    }
+
+    input,
+    span {
+        margin-top: 30px;
+        /* Ortak margin değeri */
+    }
+
+    #hrr,
+    #arr,
+    #anarenk,
+    #ren {
+        display: none;
+    }
+</style>
+</head>
+
 <body>
+
     <div class="div">
-    <h1>ATKI HESAPLAMA</h1>
-    <input type="text" name="" id="cm" placeholder="Çözgü Metresi">
-    <input type="text" name="" id="te" placeholder="Tarak Eni">
-    <input type="text" name="" id="as" placeholder="Atkı Sıklığı">
-</div>
+        <h1>ATKI HESAPLAMA</h1>
+        <input type="text" name="" id="cm" placeholder="Çözgü Metresi">
+        <input type="text" name="" id="te" placeholder="Tarak Eni">
+        <input type="text" name="" id="as" placeholder="Atkı Sıklığı">
+    </div>
 
-<div class="di">
-    <input style="width: 104px;" type="text" name="" id="inu" placeholder="İplik No ( Ne )"> <span>/</span>
-    <input style="width: 45px;" type="text" name="" id="bü" placeholder="Büküm">
-</div>
+    <div class="di">
+        <input style="width: 104px;" type="text" name="" id="inu" placeholder="İplik No ( Ne )"> <span>/</span>
+        <input style="width: 45px;" type="text" name="" id="bü" placeholder="Büküm">
+    </div>
 
-<div class="di">
-    <span>Renk Raporlu mu ? </span> <input type="checkbox" id="checkBox">
-    <span id="arr">Ana Renk Raporu :</span>
-    <input style="width: 35px;" type="text" name="anarenk" id="anarenk" placeholder="" value="1">
-    <span id="hrr">Hesaplanan Renk Raporu :</span>
-    <input style="width: 35px;" type="text" name="renk" id="ren" placeholder="" value="1">
-</div>
+    <div class="di">
+        <span>Renk Raporlu mu ? </span> <input type="checkbox" id="checkBox">
+        <span id="arr">Ana Renk Raporu :</span>
+        <input style="width: 35px;" type="text" name="anarenk" id="anarenk" placeholder="" value="1">
+        <span id="hrr">Hesaplanan Renk Raporu :</span>
+        <input style="width: 35px;" type="text" name="renk" id="ren" placeholder="" value="1">
+    </div>
 
-<div class="div">
-    <input style="font-size: 16px;" type="button" value="HESAPLA" id="hes">
-    <input style="font-size: 16px;" type="button" value="TEMİZLE" id="del" onclick="del()">
-    <input type="text" name="" id="s" placeholder="SONUÇ">
-</div>
+    <div class="div">
+        <input style="font-size: 16px;" type="button" value="HESAPLA" id="hes">
+        <input style="font-size: 16px;" type="button" value="TEMİZLE" id="del" onclick="del()">
+        <input type="text" name="" id="s" placeholder="SONUÇ">
+    </div>
+
+    <script>
+
+function nazif() {
+    let metre = document.getElementById("cm").value.replace(",", ".");
+    let en = document.getElementById("te").value.replace(",", ".");
+    let siklik = document.getElementById("as").value.replace(",", ".");
+    let ip = document.getElementById("inu").value.replace(",", ".");
+    let büküm = document.getElementById("bü").value.replace(",", ".");
+    let ana = document.getElementById("anarenk").value.replace(",", ".");
+    let renk = document.getElementById("ren").value.replace(",", ".");
+
+    let sonuc = ((((metre*0.90 * (en+80) * siklik) / ((ip / büküm) * 1.693)) / 100000) / ana) * renk;
+
+    document.getElementById("s").value = "Atkı KG :" + sonuc.toFixed(2);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var checkBox = document.getElementById("checkBox");
+    var arrSpan = document.getElementById("arr");
+    var anarenkInput = document.getElementById("anarenk");
+    var renInput = document.getElementById("ren");
+    var hrrspan = document.getElementById("hrr");
+
+    checkBox.addEventListener("change", function () {
+        if (checkBox.checked) {
+            // Checkbox işaretlendiğinde
+            arrSpan.style.display = "inline";
+            anarenkInput.style.display = "inline";
+            renInput.style.display = "inline";
+            hrrspan.style.display = "inline";
+        } else {
+            // Checkbox işaretlenmediğinde
+            arrSpan.style.display = "none";
+            anarenkInput.style.display = "none";
+            renInput.style.display = "none";
+            hrrspan.style.display = "none";
+        }
+    });
+
+    // Temizle butonunu ekleyelim
+    var delButton = document.getElementById("del");
+    delButton.addEventListener("click", function () {
+        // Temizleme fonksiyonunu çağır
+        document.getElementById("cm").value = "";
+        document.getElementById("te").value = "";
+        document.getElementById("as").value = "";
+        document.getElementById("inu").value = "";
+        document.getElementById("bü").value = "";
+        document.getElementById("anarenk").value = "1";
+        document.getElementById("ren").value = "1";
+        document.getElementById("s").value = ""; // Varsa sonucu da temizle
+    });
+});
+
+    function del(){
+        location.reload();
+    }
+
+let btn = document.getElementById("hes");
+btn.onclick = nazif;
+
+
+
+    </script>
+
+
+
 </body>
 
-
-<script>
-
-    function nazif() {
-        let metre = document.getElementById("cm").value;
-        let en = document.getElementById("te").value;
-        let siklik = document.getElementById("as").value;
-        let ip = document.getElementById("inu").value;
-        let büküm = document.getElementById("bü").value;
-        let ana = document.getElementById("anarenk").value;
-        let renk = document.getElementById("ren").value;
-    
-        let sonuc = ((((metre * en * siklik) / ((ip / büküm) * 1.693)) / 1000) / ana) * renk;
-    
-        document.getElementById("s").value = "Atkı KG :" + sonuc.toFixed(2);
-    }
-    
-    document.addEventListener("DOMContentLoaded", function () {
-        var checkBox = document.getElementById("checkBox");
-        var arrSpan = document.getElementById("arr");
-        var anarenkInput = document.getElementById("anarenk");
-        var renInput = document.getElementById("ren");
-        var hrrspan = document.getElementById("hrr");
-    
-        checkBox.addEventListener("change", function () {
-            if (checkBox.checked) {
-                // Checkbox işaretlendiğinde
-                arrSpan.style.display = "inline";
-                anarenkInput.style.display = "inline";
-                renInput.style.display = "inline";
-                hrrspan.style.display = "inline";
-            } else {
-                // Checkbox işaretlenmediğinde
-                arrSpan.style.display = "none";
-                anarenkInput.style.display = "none";
-                renInput.style.display = "none";
-                hrrspan.style.display = "none";
-            }
-        });
-    
-        // Temizle butonunu ekleyelim
-        var delButton = document.getElementById("del");
-        delButton.addEventListener("click", function () {
-            // Temizleme fonksiyonunu çağır
-            document.getElementById("cm").value = "";
-            document.getElementById("te").value = "";
-            document.getElementById("as").value = "";
-            document.getElementById("inu").value = "";
-            document.getElementById("bü").value = "";
-            document.getElementById("anarenk").value = "1";
-            document.getElementById("ren").value = "1";
-            document.getElementById("s").value = ""; // Varsa sonucu da temizle
-        });
-    });
-    
-        function del(){
-            location.reload();
-        }
-    
-    let btn = document.getElementById("hes");
-    btn.onclick = nazif;
-    
-        </script>
 </html>
