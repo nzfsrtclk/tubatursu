@@ -198,7 +198,7 @@ h2 {
     background: radial-gradient(circle, #1a64ee, #9fcdf1);
     color: white;
     box-shadow: 5px 5px 15px #171818;
-    transition:1s;
+    transition: 1s;
     /* Burada arka plan rengi için 1.5s, font boyutu için 0.5s süre verdik */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -343,86 +343,12 @@ select {
     }
 }
 
-/* Küçük ekranlar (telefonlar) */
-@media (max-width: 599px) {
 
-    body {
-        width: 100%;
-    }
-
-    .baslik {
-        width: 93%;
-        border-radius: 50px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        margin: 1rem;
-        padding: 0;
-    }
-
-    .baslik h1 {
-        margin: 0;
-        font-size: 2em;
-    }
-
-    .baslik h2 {
-        margin: 5px 0 0;
-        font-size: 1.5em;
-        font-weight: 300;
-    }
-
-    .yapi {
-        padding: 1px;
-        margin: 10px auto;
-        width: 93%;
-    }
-
-    #numberInput,
-    #numberInput1 {
-        width: 60%;
-        box-shadow: 0 0 0 #171818;
-    }
-
-    .buttons {
-        width: 85%;
-    }
-
-    .buttons button {
-        font-size: 0.8rem;
-        box-shadow: 1px 1px 1px #171818;
-    }
-
-    select {
-        box-shadow: 0 0 0 #171818;
-    }
-
-    .tarihKutusu {
-        margin-bottom: 5px;
-    }
-
-    .liBina {
-        font-size: 15px;
-        width: 86%;
-        list-style: none;
-    }
-
-    .liBina:hover {
-        background-color: white;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-style: oblique;
-        width: 80%;
-        font-size: 18px;
-    }
-
-    .liBina input {
-        width: 2%;
-        margin-left: -50px;
-    }
-
-}
 
 /* Orta ekranlar (tabletler) */
 @media (min-width: 600px) and (max-width: 899px) {
 
-    .baslik {
+    /* .baslik {
         width: 93%;
         border-radius: 50px;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -478,76 +404,71 @@ select {
         margin-bottom: 100px;
         width: 80%;
         margin-left: 10%;
-    }
+    } */
 
 }
 
 /* Özellikle küçük ekranlar için daha da küçük değişiklikler */
 @media (max-width: 400px) {
-
-    body {
-        width: 100%;
+    .center{
+        width:375px;
     }
-
     .baslik {
-        width: 93%;
-        border-radius: 50px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        margin: 1rem;
-        padding: 0;
-    }
-
-    .baslik h1 {
-        margin: 0;
-        font-size: 2em;
-    }
-
-    .baslik h2 {
-        margin: 5px 0 0;
-        font-size: 1.5em;
-        font-weight: 300;
-    }
-
-    .yapi {
-        padding: 1px;
-        margin: 10px auto;
-        width: 93%;
-    }
-
-    #numberInput,
-    #numberInput1 {
-        width: 60%;
-        box-shadow: 0 0 0 #171818;
-    }
-
-    .buttons {
-        width: 85%;
-    }
-
-    .buttons button {
-        font-size: 0.8rem;
-        box-shadow: 1px 1px 1px #171818;
-    }
-
-    select {
-        box-shadow: 0 0 0 #171818;
+        width: 360px;
+        font-size: 10px;
+        margin-left: 7px;
+        margin-right: 0;
     }
 
     .tarihKutusu {
-        margin-bottom: 5px;
+        width: 100%;
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: -10px;
     }
 
-    .liBina {
-        font-size: 15px;
-        width: 86%;
-        list-style: none;
-
-
+    .left,
+    .right {
+        display: none;
     }
 
-    .liBina input {
-        width: 2%;
-        margin-left: -50px;
+    .yapi{
+        width: 310px;
+        margin-left: 13px;
     }
 
+    #myForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 310px;
+        margin-left: -2px;
+    }
+
+    span {
+        font-size: 10px;
+    }
+
+    .input1 {
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 5em;
+        transition: 1s;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        margin: 0.3rem;
+        padding-right: 0.3rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+
+    #numberInput{
+        width: 160px;
+    }
+
+    .liBina:hover {
+        background-color: #84b1c5;
+    }
 }
