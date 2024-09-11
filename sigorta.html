@@ -18,10 +18,10 @@
             <img src="tubatursu.jpg" alt="tubatursu">
         </a>
 
-<br><br><br>
+        <br><br><br>
 
         <a href="https://www.tantekstil.com.tr/" target="_blank">
-            
+
             <img src="tantekstil.png" alt="tantekstil">
         </a>
     </div>
@@ -43,6 +43,7 @@
         <!---------------------------------------------------------------------->
 
         <div class="yapi1">
+            <form action="" id="myForm">
             <label class="input1">
                 <input class="input2" type="radio" name="binatipi" value="yapitipi1" id="yapitipi1"> <span> KONUT</span>
             </label>
@@ -54,9 +55,11 @@
                 <input class="input2" type="radio" name="binatipi" value="yapitipi3" id="yapitipi3"><span> DİĞER
                     YAPILAR</span>
             </label>
+        </form>
         </div>
 
         <!---------------------------------------------------------------------->
+
         <div id="centerid" class="no-yapi">
             <div id="yapi13">
                 <div class="yapi" display="none" id="yapi3">
@@ -179,117 +182,132 @@
                 </div>
             </div>
             <!---------------------------------------------------------------------->
-            <div id="işyerikat">
-                <div id="yapi14">
-                    <div id="yapi7">
-                        <div id="yapi21">
-                            <div class="yapi" display="none">
-                                <ol>
-                                    <p>Bina Kat Sayısı</p>
-                                    <li>
-                                        <select name="konut" id="katsayisi">
-                                            <option value="" disabled selected>Seçiniz</option>
-                                            <option value="1">1-3 Arası</option>
-                                            <option value="1">4-7 Arası</option>
-                                            <option value="1">8 ve Üzeri</option>
-                                        </select>
-                                    </li>
-                                </ol>
+            <div id="ev1">
+                <div id="işyerikat">
+                    <div id="yapi14">
+                        <div id="yapi7">
+                            <div id="yapi21">
+                                <div class="yapi" display="none">
+                                    <ol>
+                                        <p>Bina Kat Sayısı</p>
+                                        <li>
+                                            <select name="konut" id="katsayisi">
+                                                <option value="" disabled selected>Seçiniz</option>
+                                                <option value="1">1-3 Arası</option>
+                                                <option value="1">1-7 Arası</option>
+                                                <option value="1">8-10 Arası</option>
+                                                <option value="1">10 ve Üzeri</option>
+                                            </select>
+                                        </li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!---------------------------------------------------------------------->
-            <div id="yapi18">
-                <div id="yapi4">
-                    <div class="yapi">
-                        <ol>
-                            <p>Asansör Durumunu Seçiniz</p>
-                            <li>
-                                <select name="asansor" id="asansor">
-                                    <option value="" disabled selected>Seçiniz</option>
-                                    <option value="1">Asansör Var</option>
-                                    <option value="1">Asansör Yok</option>
-                                </select>
-                            </li>
-                        </ol>
+            <div id="ev2">
+                <div id="yapi18">
+                    <div id="yapi4">
+                        <div class="yapi">
+                            <ol>
+                                <p>Asansör Durumunu Seçiniz</p>
+                                <li>
+                                    <select name="asansor" id="asansor">
+                                        <option value="" disabled selected>Seçiniz</option>
+                                        <option value="2">Asansör Var</option>
+                                        <option value="1">Asansör Yok</option>
+                                    </select>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
             <!---------------------------------------------------------------------->
-            <div id="yapi17">
-                <div id="yapi8">
-                    <div class="yapi">
-                        <ol>
-                            <p>Bina Yapı Tarzını Seçiniz</p>
-                            <li>
-                                <select name="bina2" id="bina">
-                                    <option value="" disabled selected>Seçiniz</option>
-                                    <option value="1">Betonarme</option>
-                                    <option value="1" id="yapi5">Yığma Tuğla (Kerpiç)</option>
-                                    <option value="1" id="yapi6">Ahşap</option>
-                                    <option value="1">Çelik Konstrüksiyon</option>
-                                </select>
-                            </li>
-                        </ol>
+            <div id="ev3">
+                <div id="yapi17">
+                    <div id="yapi8">
+                        <div class="yapi">
+                            <ol>
+                                <p>Bina Yapı Tarzını Seçiniz</p>
+                                <li>
+                                    <select name="bina2" id="bina">
+                                        <option value="" disabled selected>Seçiniz</option>
+                                        <option value="100">Betonarme</option>
+                                        <option value="60" id="yapi5">Yığma Tuğla (Kerpiç)</option>
+                                        <option value="80" id="yapi6">Ahşap</option>
+                                        <option value="90">Çelik Konstrüksiyon</option>
+                                    </select>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
             <!---------------------------------------------------------------------->
-            <div id="yapi15">
-                <div id="yapi9">
-                    <div class="yapi">
-                        <ol>
-                            <p>Binanızın Nizamını Seçiniz</p>
-                            <li>
-                                <select name="nizam" id="nizam">
-                                    <option value="" disabled selected>Seçiniz</option>
-                                    <option value="1">Bitişik</option>
-                                    <option value="1">Ayrık</option>
-                                </select>
-                            </li>
-                        </ol>
+            <div id="ev4">
+                <div id="yapi15">
+                    <div id="yapi9">
+                        <div class="yapi">
+                            <ol>
+                                <p>Binanızın Nizamını Seçiniz</p>
+                                <li>
+                                    <select name="nizam" id="nizam">
+                                        <option value="" disabled selected>Seçiniz</option>
+                                        <option value="100">Bitişik</option>
+                                        <option value="200">Ayrık</option>
+                                    </select>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!---------------------------------------------------------------------->
-            <div id="yapi16">
-                <div id="yapi10">
-                    <div class="yapi">
-                        <ol>
-                            <p>Konutun Çatısını Seçiniz</p>
-                            <li>
-                                <select name="cati" id="cati">
-                                    <option value="" disabled selected>Seçiniz</option>
-                                    <option value="1">Ahşap Doğrama Kiremit Çatı</option>
-                                    <option value="1">Çelik Konstrüksiyon Çatı Kiremit</option>
-                                    <option value="1">Teras</option>
-                                </select>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <!---------------------------------------------------------------------->
-
-            <div class="yapi">
-                <ol>
-                    <p>Konut Metrekaresini Giriniz</p>
-                    <input type="number" id="numberInput" name="metrekare" min="1" required placeholder="">
-                </ol>
             </div>
 
+            <!---------------------------------------------------------------------->
+            <div id="ev5">
+                <div id="yapi16">
+                    <div id="yapi10">
+                        <div class="yapi">
+                            <ol>
+                                <p>Konutun Çatısını Seçiniz</p>
+                                <li>
+                                    <select name="cati" id="cati">
+                                        <option value="" disabled selected>Seçiniz</option>
+                                        <option value="1">Ahşap Doğrama Kiremit Çatı</option>
+                                        <option value="1">Çelik Konstrüksiyon Çatı Kiremit</option>
+                                        <option value="1">Teras</option>
+                                    </select>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---------------------------------------------------------------------->
+            <div id="ev6">
+                <div class="yapi">
+                    <ol>
+                        <p>Konut Metrekaresini Giriniz</p>
+                        <input type="number" id="numberInput" name="metrekare" min="1" required placeholder="">
+                    </ol>
+                </div>
+            </div>
             <!---------------------------------------------------------------------->
 
             <div class="buttons">
-                <button onclick="hesapla()">Hesapla</button>
-                <button onclick="sifirla()">Sıfırla</button>
+
+                <button id="hesapla" onclick="hesapla()">Hesapla</button>
+                <button id="sifirla" onclick="sifirla()">Sıfırla</button>
+
             </div>
 
             <!---------------------------------------------------------------------->
 
         </div>
+
         <div class="yazdir" id="yazdir">
 
         </div>
