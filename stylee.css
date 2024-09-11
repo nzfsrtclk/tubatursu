@@ -21,6 +21,8 @@ body {
     padding-bottom: 0.5rem;
 }
 
+
+
 span {
     font-size: 1rem;
 }
@@ -70,7 +72,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .baslik1 {
@@ -102,8 +104,6 @@ h2 {
     font-size: 1.5em;
     font-weight: 300;
 }
-
-
 
 .yapi,
 .byapi {
@@ -184,6 +184,10 @@ h2 {
     border-radius: 5px;
 }
 
+.hesapla {
+    display: none;
+}
+
 .buttons button {
     padding: 10px 20px;
     margin: 0 10px;
@@ -194,7 +198,7 @@ h2 {
     background: radial-gradient(circle, #1a64ee, #9fcdf1);
     color: white;
     box-shadow: 5px 5px 15px #171818;
-    transition: background 3s, font-size 0.8s;
+    transition:1s;
     /* Burada arka plan rengi için 1.5s, font boyutu için 0.5s süre verdik */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -263,6 +267,15 @@ select {
         align-items: flex-start;
         flex-wrap: wrap;
         flex-direction: row;
+    }
+
+    #hesapla {
+        pointer-events: auto;
+        /* Butonun tıklanabilir olduğundan emin olun */
+    }
+
+    #sifirla {
+        pointer-events: auto;
     }
 
     .yapi {
