@@ -332,25 +332,25 @@ function hesapla() {
 
             let isyeritek = 12250 ;     // Ticari binalarda 3 kata kadar 3 kat dahil asansörsüz.
 
-            hesaplamaSonucu1 =isyeritek;
+            hesaplamaSonucu1 =isyeritek * numberInput.value;
 
         } else if (katsayisi.selectedIndex===2){
 
             let isyeri3 = 14400 ;       // Ticari amaçlı binalarda 21,50 metre yüksekliğe kadar olan yapılar.
 
-            hesaplamaSonucu1 = isyeri3;
+            hesaplamaSonucu1 = isyeri3 * numberInput.value;
 
         } else if (katsayisi.selectedIndex===3){
 
             let isyeri8 = 18700 ;       // İş merkezleri 21,50 metre ile 30,50 metre arası dahil yapılar.
 
-            hesaplamaSonucu1 = isyeri8 ;
+            hesaplamaSonucu1 = isyeri8 * numberInput.value ;
 
         } else if (katsayisi.selectedIndex===4){
 
             let isyeri10 = 21300 ;      // İş merkezleri yapı yüksekliği 30,50 metreyi aşan yapılar.
 
-            hesaplamaSonucu1 = isyeri10 ;
+            hesaplamaSonucu1 = isyeri10 *numberInput.value ;
 
         } else if (isyeri.selectedIndex > 1 ){
 
@@ -363,35 +363,35 @@ function hesapla() {
 
             let müstakil = 12250 ;     // Konutlar 3 kata kadar 3 kat dahil asansörsüz.
 
-            hesaplamaSonucu1 = müstakil;        
+            hesaplamaSonucu1 = müstakil * numberInput.value;        
         }
 
         else if(katsayisi.selectedIndex===2){
             
             let uckat = 14400 ;        // 21,50 metre yüksekliğe kadar olan konutlar.
 
-            hesaplamaSonucu1 = uckat;
+            hesaplamaSonucu1 = uckat * numberInput.value;
         } 
 
         else if(katsayisi.selectedIndex===3){
 
             let dortkat = 15300 ;      // 30,50 metre yüksekliğe kadar olan apartman tipi konutlar.
 
-            hesaplamaSonucu1 = dortkat;
+            hesaplamaSonucu1 = dortkat * numberInput.value;
         }
 
         else if(katsayisi.selectedIndex===4){
 
             let beskat = 18700 ;      // 30,50 metre ile 51,50 metre arası dahil. 
 
-            hesaplamaSonucu1 = beskat ;
+            hesaplamaSonucu1 = beskat  * numberInput.value;
         } 
         
         else if (asansor.selectedIndex===2){
 
             let asansorsuz13 = 12250;
 
-            hesaplamaSonucu1 = asansorsuz13;
+            hesaplamaSonucu1 = asansorsuz13 * numberInput.value;
         }
     }
 
