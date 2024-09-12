@@ -85,7 +85,7 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             yapi4.classList.add("no-yapi");
             yapi5.classList.add("no-yapi");
             yapi6.classList.add("no-yapi");
-            // yapi7.classList.add("no-yapi");
+            yapi7.classList.add("no-yapi");
             yapi8.classList.add("no-yapi");
             yapi9.classList.add("no-yapi");
             yapi10.classList.add("no-yapi");
@@ -95,7 +95,7 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             yapi4.classList.remove("no-yapi");
             yapi5.classList.remove("no-yapi");
             yapi6.classList.remove("no-yapi");
-            // yapi7.classList.remove("no-yapi");
+             yapi7.classList.remove("no-yapi");
             yapi8.classList.remove("no-yapi");
             yapi9.classList.remove("no-yapi");
             yapi10.classList.remove("no-yapi");
@@ -161,18 +161,46 @@ document.getElementById('konut').addEventListener('change', function () {
     };
 });
 
+document.getElementById("asansor").addEventListener("change", function () {
+
+    let seçilenAsansorVar = this.options[this.selectedIndex];
+    let seçilenAsansorVarId = seçilenAsansorVar.id;
+
+    let asansorsuzOption = document.getElementById("asansorsuz");
+    let  asan1 = document.getElementById("asan1");
+    let  asan2 = document.getElementById("asan2");
+    let  asan3 = document.getElementById("asan3");
+
+    if (seçilenAsansorVarId === "asvar") {
+        asansorsuzOption.classList.add("no-yapi");
+    } else {
+        asansorsuzOption.classList.remove("no-yapi");
+    }
+
+    if(seçilenAsansorVarId !=="asvar"){
+        asan1.classList.add("no-yapi");
+        asan2.classList.add("no-yapi");
+        asan3.classList.add("no-yapi");
+    } else {
+        asan1.classList.remove("no-yapi");
+        asan2.classList.remove("no-yapi");
+        asan3.classList.remove("no-yapi");
+    }
+
+
+});
+
 document.getElementById('isyeri').addEventListener('change', function () {
 
     let seçilenişyeri = this.options[this.selectedIndex];
     let seçilenişyeriİd = seçilenişyeri.id;
 
-    let işyeriid2Element = document.getElementById('işyeriid2');
-
-
-    if (seçilenişyeriİd !== 'işyeriid1') {        // işyeriid1 olan seçili değilse kat sayısı kısmını gizliyor.
-        işyerikat.classList.add("no-yapi");
+    if (seçilenişyeriİd === 'işyeriid1') {        // işyeriid1 olan seçili değilse kat sayısı kısmını gizliyor.
+        yapi4.classList.remove("no-yapi");
+        yapi7.classList.remove("no-yapi");
     } else {
-        işyerikat.classList.remove("no-yapi");
+        yapi4.classList.add("no-yapi");
+        yapi7.classList.add("no-yapi");
     }
 });
 
@@ -200,7 +228,7 @@ function sifirla() {
     document.getElementById("yapi1").classList.add("no-yapi");
     document.getElementById("yapi2").classList.add("no-yapi");
     document.getElementById("yapi3").classList.add("no-yapi");
-    document.getElementById("yapi4").classList.add("no-yapi");
+   // document.getElementById("yapi4").classList.add("no-yapi");
     document.getElementById("yapi5").classList.add("no-yapi");
     document.getElementById("yapi6").classList.add("no-yapi");
     // document.getElementById("yapi7").classList.remove("no-yapi");
@@ -323,8 +351,11 @@ function hesapla() {
             let isyeri10 = 21300 ;      // İş merkezleri yapı yüksekliği 30,50 metreyi aşan yapılar.
 
             hesaplamaSonucu1 = isyeri10 ;
-        }
 
+        } else if (isyeri.selectedIndex > 1 ){
+
+            hesaplamaSonucu1 = isyeri.value * numberInput.value;
+        }
 
     } else if (selectedValue === 'yapitipi1') {
 
@@ -332,7 +363,7 @@ function hesapla() {
 
             let müstakil = 12250 ;     // Konutlar 3 kata kadar 3 kat dahil asansörsüz.
 
-            hesaplamaSonucu1 = müstakil;
+            hesaplamaSonucu1 = müstakil;        
         }
 
         else if(katsayisi.selectedIndex===2){
@@ -340,7 +371,6 @@ function hesapla() {
             let uckat = 14400 ;        // 21,50 metre yüksekliğe kadar olan konutlar.
 
             hesaplamaSonucu1 = uckat;
-
         } 
 
         else if(katsayisi.selectedIndex===3){
@@ -348,7 +378,6 @@ function hesapla() {
             let dortkat = 15300 ;      // 30,50 metre yüksekliğe kadar olan apartman tipi konutlar.
 
             hesaplamaSonucu1 = dortkat;
-
         }
 
         else if(katsayisi.selectedIndex===4){
@@ -356,6 +385,13 @@ function hesapla() {
             let beskat = 18700 ;      // 30,50 metre ile 51,50 metre arası dahil. 
 
             hesaplamaSonucu1 = beskat ;
+        } 
+        
+        else if (asansor.selectedIndex===2){
+
+            let asansorsuz13 = 12250;
+
+            hesaplamaSonucu1 = asansorsuz13;
         }
     }
 
@@ -367,13 +403,4 @@ function hesapla() {
 
     document.getElementById("yazdir").innerHTML = "Tavsiye Edilen Sigorta Bedeli : " + hesaplamaSonucu1;
 }
-
-
-
-//hesaplamaSonucu1 = (konut.value * numberInput.value) + parseInt(bina.value) + parseInt(nizam.value) + parseInt(cati.value) +
-            
-           // parseInt(katsayisi.value) + parseInt(asansor.value)
-
-
-
 
