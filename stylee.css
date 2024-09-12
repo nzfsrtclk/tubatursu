@@ -1,474 +1,406 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-}
 
-.input1 {
-    border: 1px solid black;
-    border-radius: 5em;
-    transition: 1s;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
-    margin: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
+// tarih kısmı.......
+const tarih = document.getElementsByClassName("tarih")[0];
+const date = new Date();
+const gun = String(date.getDate()).padStart(2, '0'); // Ayın gününü iki haneli yap
+const ay = String(date.getMonth() + 1).padStart(2, '0'); // Ayı iki haneli yap
+const yil = date.getFullYear();
 
+tarih.innerHTML = gun + " / " + ay + " / " + yil;
 
+//  Optionlar arası geçişerde sayfayı yenileme
 
-span {
-    font-size: 1rem;
-}
+let previousSelection = null;
 
-.yapi1 {
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+document.getElementById('myForm').addEventListener('change', function(event) {
+    if (event.target.name === 'binatipi') {
+        if (previousSelection && previousSelection !== event.target.value) {
+            location.reload(); // Sayfayı yenile
+        }
+        previousSelection = event.target.value;
+    }
+});
 
-h2 {
-    font-size: 1px;
-}
-
-.input1:hover {
-    background: radial-gradient(circle, #111b2c, #60ace7);
-    border-radius: 5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    color: #f4f4f4;
-}
-
-.left,
-.right {
-    width: 15%;
-    background-color: rgb(224, 236, 232);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.right a img {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-left: 10%;
-}
-
-.left a img {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.baslik1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-}
-
-.baslik {
-    background: radial-gradient(circle, #1a64ee, #9fcdf1);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    border-radius: 50px;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-.baslik h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-.baslik h2 {
-    margin: 5px 0 0;
-    font-size: 1.5em;
-    font-weight: 300;
-}
-
-.yapi,
-.byapi {
-    background-color: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    width: 90%;
-    /*   display: none;      burası en son gizlenecek */
-}
-
-.no-yapi {
-    display: none;
-}
-
-.yapi ol {
-    list-style: none;
-    padding: -10px;
-    margin: -10px;
-    counter-reset: item;
-}
-
-.yapi ol li {
-    counter-increment: item;
-    margin: 10px 0;
-    padding-left: 25px;
-    padding-right: 25px;
-    position: relative;
-    list-style-type: none;
-    transition: 0.5s;
-    display: list-item;
-}
-
-.liBina:hover {
-    background-color: #84b1c5;
-    border-radius: 5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
-
-#numberInput,
-#numberInput1 {
-    counter-increment: item;
-    margin: 10px 0;
-    margin-bottom: 18px;
-    padding-left: 25px;
-    margin-left: 28px;
-    height: 28px;
-    padding-right: 55px;
-    position: relative;
-    width: 86%;
-    border-radius: 5px;
-    color: rgb(35, 120, 199);
-    border: 1px solid #84b1c5;
-    box-shadow: 10px 10px 30px #171818;
-    font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
-}
-
-.yapi ol p {
-    font-weight: bolder;
-}
-
-.yazdir {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 100px;
-}
-
-.buttons {
-    text-align: center;
-    margin-top: 20px;
-    width: 85%;
-    margin-left: 10%;
-    border-radius: 5px;
-}
-
-.hesapla {
-    display: none;
-}
-
-.buttons button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background: radial-gradient(circle, #1a64ee, #9fcdf1);
-    color: white;
-    box-shadow: 5px 5px 15px #171818;
-    transition: 1s;
-    /* Burada arka plan rengi için 1.5s, font boyutu için 0.5s süre verdik */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.buttons button:hover {
-    font-size: 1.3rem;
-    background: radial-gradient(circle, #8ac8ec, #0a6faa);
-}
-
-.buttons button:disabled {
-    background-color: #cccccc;
-}
-
-select {
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px solid #84b1c5;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-shadow: 10px 10px 30px #171818;
-}
-
-.tarih {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-right: 1%;
-    font-size: 150%;
-    font-family: 'Times New Roman', Times, serif;
-    background: radial-gradient(circle, #080e1a, #569cd1);
-    color: rgb(255, 253, 253);
-    width: 50%;
-    border-radius: 30px;
-    flex-wrap: wrap;
-    height: 4vh;
-}
-
-.tarihKutusu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 1100px;
-    /* burası ekranın seçim sonrası sabit kalmasını sağlıyor. */
-
-}
-
-.footer {
-    display: none;
-}
+// Sayfa yüklendiğinde, seçili radio butonunu kaydet
+window.addEventListener('load', function() {
+    const selectedOption = document.querySelector('input[name="binatipi"]:checked');
+    if (selectedOption) {
+        previousSelection = selectedOption.value;
+    }
+});
 
 
+// Seçimlere gizlenenler ve gösterilenler
 
-@media print {
+document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
+    radio.addEventListener('change', function () {
 
-    body {
-        margin-left: 0;
-        margin-top: 10px;
-        padding: 30px;
-        background-color: none;
-        display: flex;
-        justify-content: left;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        flex-direction: row;
+        let seçilentip = document.querySelector('input[name="binatipi"]:checked').value;
+
+        const centerid = document.getElementById("centerid");
+        const yapi1 = document.getElementById("yapi1");            //  İŞ YERİ TİPLERİ  
+        const yapi2 = document.getElementById("yapi2");            //  DİĞER YAPI TİPLERİ
+        const yapi3 = document.getElementById("yapi3");            //  BİNA DURUMU
+        const yapi4 = document.getElementById("yapi4");            //  ASANSÖR VAR YOK
+        const yapi5 = document.getElementById("yapi5");            //  YIĞMA TUĞLA
+        const yapi6 = document.getElementById("yapi6");            //  AHŞAP    
+        const yapi7 = document.getElementById("yapi7");            //  KAT SAYISI 
+        const yapi8 = document.getElementById("yapi8");            //  BİNA YAPI TARZI - BETONARME - YIĞMA TUĞLA - AHŞAP - ÇELİK KONSTRÜKSİYON
+        const yapi9 = document.getElementById("yapi9");            //  NİZAM
+        const yapi10 = document.getElementById("yapi10");          //  ÇATI
+        const yapi13 = document.getElementById("yapi13");          //  BİNA DURUMU
+        const yapi14 = document.getElementById("yapi14");          //  KAT SAYISI 
+        const yapi15 = document.getElementById("yapi15");          //  NİZAM
+        const yapi16 = document.getElementById("yapi16");          //  ÇATI
+        const yapi17 = document.getElementById("yapi17");          //  BİNA YAPI TARZI - BETONARME - YIĞMA TUĞLA - AHŞAP - ÇELİK KONSTRÜKSİYON
+        const yapi18 = document.getElementById("yapi18");          //  ASANSÖR VAR YOK 
+        const yapi19 = document.getElementById("yapi19");          //  DİĞER YAPI TİPLERİ
+        const yapi20 = document.getElementById("yapi20");          //  İŞ YERİ TİPLERİ
+        const ev1 = document.getElementById("ev1");
+        const ev2 = document.getElementById("ev2");
+        const ev3 = document.getElementById("ev3");
+        const ev4 = document.getElementById("ev4");
+        const ev5 = document.getElementById("ev5");
+        const ev6 = document.getElementById("ev6");
+
+        if (seçilentip === 'yapitipi1') {                 // konut seçildiğinde gözükenler ve gizleneler
+            centerid.classList.remove("no-yapi");
+            yapi1.classList.add("no-yapi");
+            yapi2.classList.add("no-yapi");   
+            ev1.classList.add("no-yapi"); 
+            ev2.classList.add("no-yapi");   
+            ev3.classList.add("no-yapi");     
+            ev4.classList.add("no-yapi");
+            ev5.classList.add("no-yapi");
+            ev6.classList.add("no-yapi");
+        } else {
+            yapi1.classList.remove("no-yapi");
+            yapi2.classList.remove("no-yapi");
+        };
+
+        if (seçilentip === 'yapitipi2') {                 // işyeri seçildiğinde gözükenler ve gizleneler
+            centerid.classList.remove("no-yapi");
+            yapi3.classList.add("no-yapi");
+            yapi19.classList.add("no-yapi");
+            yapi4.classList.add("no-yapi");
+            yapi5.classList.add("no-yapi");
+            yapi6.classList.add("no-yapi");
+            yapi7.classList.add("no-yapi");
+            yapi8.classList.add("no-yapi");
+            yapi9.classList.add("no-yapi");
+            yapi10.classList.add("no-yapi");
+        } else {
+            yapi3.classList.remove("no-yapi");
+            yapi19.classList.remove("no-yapi");
+            yapi4.classList.remove("no-yapi");
+            yapi5.classList.remove("no-yapi");
+            yapi6.classList.remove("no-yapi");
+             yapi7.classList.remove("no-yapi");
+            yapi8.classList.remove("no-yapi");
+            yapi9.classList.remove("no-yapi");
+            yapi10.classList.remove("no-yapi");
+        };
+
+        if (seçilentip === 'yapitipi3') {                    // diğer yapılar seçildiğinde gözükenler ve gizleneler
+            centerid.classList.remove("no-yapi");
+            yapi18.classList.add("no-yapi");
+            yapi20.classList.add("no-yapi");
+            yapi13.classList.add("no-yapi");
+            yapi14.classList.add("no-yapi");
+            yapi15.classList.add("no-yapi");
+            yapi16.classList.add("no-yapi");
+            yapi17.classList.add("no-yapi");
+        } else {
+            yapi18.classList.remove("no-yapi");
+            yapi20.classList.remove("no-yapi");
+            yapi13.classList.remove("no-yapi");
+            yapi14.classList.remove("no-yapi");
+            yapi15.classList.remove("no-yapi");
+            yapi16.classList.remove("no-yapi");
+            yapi17.classList.remove("no-yapi");
+        };
+
+    });
+
+});
+
+document.getElementById('konut').addEventListener('change', function () {
+
+    let selectedOption = this.options[this.selectedIndex];
+
+    let selectedId = selectedOption.id;
+
+    //  const yapi11 = document.getElementById("yapi11");
+
+    if (selectedId === 'yapi11') {
+        yapi7.classList.add("no-yapi");
+        yapi4.classList.add("no-yapi");
+        ev3.classList.remove("no-yapi");  // yapı tarzı
+        ev4.classList.remove("no-yapi");  // nizam
+        ev5.classList.remove("no-yapi");  // çatı
+        ev6.classList.remove("no-yapi");  // input alanı metrekare
+    } else {
+        yapi7.classList.remove("no-yapi");
+        yapi4.classList.remove("no-yapi");
+    };
+
+    if (selectedId === 'yapi12') {
+        yapi5.classList.add("no-yapi");
+        yapi6.classList.add("no-yapi");
+        yapi7.classList.remove("no-yapi");
+        ev1.classList.remove("no-yapi");  // katsayisi
+        ev2.classList.remove("no-yapi");  // asansor
+        ev3.classList.remove("no-yapi");  // yapı tarzı  
+        ev4.classList.remove("no-yapi");  // nizam
+        ev5.classList.remove("no-yapi");  // çatı
+        ev6.classList.remove("no-yapi");  // input alanı metrekare
+    } else {
+        yapi5.classList.remove("no-yapi");
+        yapi6.classList.remove("no-yapi");
+        yapi7.classList.add("no-yapi");
+    };
+});
+
+document.getElementById("asansor").addEventListener("change", function () {
+
+    let seçilenAsansorVar = this.options[this.selectedIndex];
+    let seçilenAsansorVarId = seçilenAsansorVar.id;
+
+    let asansorsuzOption = document.getElementById("asansorsuz");
+    let  asan1 = document.getElementById("asan1");
+    let  asan2 = document.getElementById("asan2");
+    let  asan3 = document.getElementById("asan3");
+
+    if (seçilenAsansorVarId === "asvar") {
+        asansorsuzOption.classList.add("no-yapi");
+    } else {
+        asansorsuzOption.classList.remove("no-yapi");
     }
 
-    #hesapla {
-        pointer-events: auto;
-        /* Butonun tıklanabilir olduğundan emin olun */
-    }
-
-    #sifirla {
-        pointer-events: auto;
-    }
-
-    .yapi {
-        width: 27%;
-        box-shadow: none;
-        margin: 3px;
-        flex-direction: row;
-    }
-
-    .buttons {
-        display: none;
-    }
-
-    .baslik1 {
-        width: 100%;
-    }
-
-    .tarihKutusu {
-        justify-content: flex-start;
-        padding-right: 0;
-    }
-
-    .tarih {
-        width: auto;
-        border-radius: 0;
-        background-color: white;
-        color: #171818;
-    }
-
-    .tarihKutusu {
-        margin-bottom: 10px;
-        margin-left: 790px;
-        width: 80%;
-    }
-
-    .yazdir {
-        text-align: center;
-        width: 40%;
-        flex-direction: column;
-        margin-top: 250px;
-    }
-
-    select {
-        box-shadow: none;
-        width: 100%;
-    }
-
-    #numberInput,
-    #numberInput1 {
-        box-shadow: none;
-        width: 45%;
-        height: 33px;
+    if(seçilenAsansorVarId !=="asvar"){
+        asan1.classList.add("no-yapi");
+        asan2.classList.add("no-yapi");
+        asan3.classList.add("no-yapi");
+    } else {
+        asan1.classList.remove("no-yapi");
+        asan2.classList.remove("no-yapi");
+        asan3.classList.remove("no-yapi");
     }
 
 
-    .footer {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        text-align: right;
-        font-size: 0.8em;
-        color: #171818;
-        padding: 10px;
-        display: inline;
+});
+
+document.getElementById('isyeri').addEventListener('change', function () {
+
+    let seçilenişyeri = this.options[this.selectedIndex];
+    let seçilenişyeriİd = seçilenişyeri.id;
+
+    if (seçilenişyeriİd === 'işyeriid1') {        // işyeriid1 olan seçili değilse kat sayısı kısmını gizliyor.
+        yapi4.classList.remove("no-yapi");
+        yapi7.classList.remove("no-yapi");
+    } else {
+        yapi4.classList.add("no-yapi");
+        yapi7.classList.add("no-yapi");
     }
+});
+
+
+// Hesaplama sonunda tekrar sıfırlama yapma
+
+
+function sifirla() {
+    // Tüm radio button'ların seçimini kaldırır
+    document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
+        radio.checked = false;  // radio butonu seçimini kaldırmak için false kullanılır
+    });
+
+    // Tüm select (dropdown) elemanlarını varsayılan duruma getirir
+    document.querySelectorAll('select').forEach(function (select) {
+        select.selectedIndex = 0;  // İlk (varsayılan) seçeneği seçer
+    });
+
+    // Tüm input (text) elemanlarını temizler
+    document.getElementById("numberInput").value = "";  // Text alanlarını boşaltır   
+    document.getElementById("yazdir").innerHTML = "";
+
+    // Gerekirse diğer alanları gizlemek için
+    document.getElementById("centerid").classList.add("no-yapi");
+    document.getElementById("yapi1").classList.add("no-yapi");
+    document.getElementById("yapi2").classList.add("no-yapi");
+    document.getElementById("yapi3").classList.add("no-yapi");
+   // document.getElementById("yapi4").classList.add("no-yapi");
+    document.getElementById("yapi5").classList.add("no-yapi");
+    document.getElementById("yapi6").classList.add("no-yapi");
+    // document.getElementById("yapi7").classList.remove("no-yapi");
+    document.getElementById("yapi8").classList.add("no-yapi");
+    document.getElementById("yapi9").classList.add("no-yapi");
+    document.getElementById("yapi10").classList.add("no-yapi");
+    document.getElementById("hesapla").classList.remove("hesapla");   // hesaplama düğmesi gösteriliyor.
+};
+
+
+// Hesaplama formülleri.
+
+function hesapla() {
+    const selectedTip = document.querySelector('input[name="binatipi"]:checked');
+    const digeryapi = document.getElementById("digeryapi");
+    const numberInput = document.getElementById("numberInput");
+    const isyeri = document.getElementById("isyeri");
+    const katsayisi = document.getElementById("katsayisi");
+    const konut = document.getElementById("konut");
+    const bina = document.getElementById("bina");
+    const nizam = document.getElementById("nizam");
+    const cati = document.getElementById("cati");
+    const asansor = document.getElementById("asansor");
+
+    if (!selectedTip) {
+        alert('Lütfen bina tipini seçin!');
+        return;
+    }
+
+    let selectedValue = selectedTip.value;
+    let alanlar = [];
+    let bosAlanVarMi = false;
+
+    // Seçilen tipin gerektirdiği alanları kontrol et
+
+    if (selectedValue === 'yapitipi1') {
+
+        if (konut.selectedIndex === 1) {
+
+            alanlar.push(bina,nizam, cati,numberInput)
+
+        } else if(konut.selectedIndex === 2){
+
+            alanlar.push(bina,nizam,cati,numberInput,katsayisi,asansor);
+
+        }
+        
+    } else if (selectedValue === 'yapitipi2') {
+
+        // İş yeri için gerekli alanlar
+
+        alanlar.push(isyeri, numberInput);
+
+        // Sadece "İş Merkezi" seçildiğinde katsayisi alanını kontrol et       
+
+        if (katsayisi.selectedIndex !== 0) {
+
+            alanlar.push(katsayisi);
+        }
+    } else if (selectedValue === 'yapitipi3') {
+
+        // Diğer yapılar için gerekli alanlar
+
+        alanlar.push(digeryapi, numberInput);
+    }
+
+
+    // Boş alanları kontrol et
+    
+    alanlar.forEach((alan) => {
+
+        if (alan && alan.value.trim() === ""   ) {
+
+            bosAlanVarMi = true;
+
+            alan.style.border = "3px solid red"; // Boş alanın kenarlığını kırmızı yap
+
+        } else  if (alan) {
+
+            alan.style.border = ""; // Alan doluysa kenarlığı sıfırla
+
+        }
+    });
+
+    if (bosAlanVarMi) {
+        alert('Lütfen tüm alanları doldurun!');
+        return;
+    }
+
+    let hesaplamaSonucu1;
+
+    // Seçilen tip ve metrekareye göre hesaplama
+
+    if (selectedValue === 'yapitipi3') {
+
+        hesaplamaSonucu1 = digeryapi.value * numberInput.value;
+
+    } else if (selectedValue === 'yapitipi2') {
+
+        if(katsayisi.selectedIndex===1) {    
+
+            let isyeritek = 12250 ;     // Ticari binalarda 3 kata kadar 3 kat dahil asansörsüz.
+
+            hesaplamaSonucu1 =isyeritek;
+
+        } else if (katsayisi.selectedIndex===2){
+
+            let isyeri3 = 14400 ;       // Ticari amaçlı binalarda 21,50 metre yüksekliğe kadar olan yapılar.
+
+            hesaplamaSonucu1 = isyeri3;
+
+        } else if (katsayisi.selectedIndex===3){
+
+            let isyeri8 = 18700 ;       // İş merkezleri 21,50 metre ile 30,50 metre arası dahil yapılar.
+
+            hesaplamaSonucu1 = isyeri8 ;
+
+        } else if (katsayisi.selectedIndex===4){
+
+            let isyeri10 = 21300 ;      // İş merkezleri yapı yüksekliği 30,50 metreyi aşan yapılar.
+
+            hesaplamaSonucu1 = isyeri10 ;
+
+        } else if (isyeri.selectedIndex > 1 ){
+
+            hesaplamaSonucu1 = isyeri.value * numberInput.value;
+        }
+
+    } else if (selectedValue === 'yapitipi1') {
+
+        if (konut.selectedIndex === 1) {
+
+            let müstakil = 12250 ;     // Konutlar 3 kata kadar 3 kat dahil asansörsüz.
+
+            hesaplamaSonucu1 = müstakil;        
+        }
+
+        else if(katsayisi.selectedIndex===2){
+            
+            let uckat = 14400 ;        // 21,50 metre yüksekliğe kadar olan konutlar.
+
+            hesaplamaSonucu1 = uckat;
+        } 
+
+        else if(katsayisi.selectedIndex===3){
+
+            let dortkat = 15300 ;      // 30,50 metre yüksekliğe kadar olan apartman tipi konutlar.
+
+            hesaplamaSonucu1 = dortkat;
+        }
+
+        else if(katsayisi.selectedIndex===4){
+
+            let beskat = 18700 ;      // 30,50 metre ile 51,50 metre arası dahil. 
+
+            hesaplamaSonucu1 = beskat ;
+        } 
+        
+        else if (asansor.selectedIndex===2){
+
+            let asansorsuz13 = 12250;
+
+            hesaplamaSonucu1 = asansorsuz13;
+        }
+    }
+
+    // hesaplama düğmesi gizleniyor.
+
+    document.getElementById("hesapla").classList.add("hesapla");   
+    
+    // Sonuç sayfasını yazırma.
+
+    document.getElementById("yazdir").innerHTML = "Tavsiye Edilen Sigorta Bedeli : " + hesaplamaSonucu1;
 }
 
-
-
-/* Orta ekranlar (tabletler) */
-@media (min-width: 600px) and (max-width: 899px) {
-
-    /* .baslik {
-        width: 93%;
-        border-radius: 50px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        margin: 1rem;
-        padding: 0;
-    }
-
-    .baslik h1 {
-        margin: 0;
-        font-size: 2em;
-    }
-
-    .baslik h2 {
-        margin: 5px 0 0;
-        font-size: 1.5em;
-        font-weight: 300;
-    }
-
-    .yapi {
-        padding: 1px;
-        margin: 10px auto;
-        width: 93%;
-    }
-
-    #numberInput,
-    #numberInput1 {
-        width: 77%;
-        box-shadow: 1px 1px 5px #171818;
-    }
-
-    .buttons {
-        width: 85%;
-        margin-bottom: 5px;
-    }
-
-    .buttons button {
-        font-size: 0.8rem;
-        box-shadow: 1px 1px 5px #171818;
-    }
-
-    select {
-        box-shadow: 1px 1px 5px #171818;
-    }
-
-    .tarihKutusu {
-        margin-bottom: 5px;
-    }
-
-    .yazdir {
-        text-align: center;
-        font-size: 2em;
-        margin-top: 20px;
-        margin-bottom: 100px;
-        width: 80%;
-        margin-left: 10%;
-    } */
-
-}
-
-/* Özellikle küçük ekranlar için daha da küçük değişiklikler */
-@media (max-width: 400px) {
-    .center{
-        width:375px;
-    }
-    .baslik {
-        width: 360px;
-        font-size: 10px;
-        margin-left: 7px;
-        margin-right: 0;
-    }
-
-    .tarihKutusu {
-        width: 100%;
-        font-size: 10px;
-        margin-top: 10px;
-        margin-bottom: -10px;
-    }
-
-    .left,
-    .right {
-        display: none;
-    }
-
-    .yapi{
-        width: 310px;
-        margin-left: 13px;
-    }
-
-    #myForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 310px;
-        margin-left: -2px;
-    }
-
-    span {
-        font-size: 10px;
-    }
-
-    .input1 {
-        width: 100%;
-        border: 1px solid black;
-        border-radius: 5em;
-        transition: 1s;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
-        margin: 0.3rem;
-        padding-right: 0.3rem;
-        padding-top: 0.3rem;
-        padding-bottom: 0.3rem;
-    }
-
-    #numberInput{
-        width: 160px;
-    }
-
-    .liBina:hover {
-        background-color: #84b1c5;
-    }
-}
