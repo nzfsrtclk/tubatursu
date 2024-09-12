@@ -158,6 +158,12 @@ document.getElementById('konut').addEventListener('change', function () {
         yapi5.classList.remove("no-yapi");
         yapi6.classList.remove("no-yapi");
         yapi7.classList.add("no-yapi");
+        ev1.classList.add("no-yapi");  // katsayisi
+        ev2.classList.add("no-yapi");  // asansor
+        ev3.classList.add("no-yapi");  // yapı tarzı  
+        ev4.classList.add("no-yapi");  // nizam
+        ev5.classList.add("no-yapi");  // çatı
+        ev6.classList.add("no-yapi");  // input alanı metrekare
     };
 });
 
@@ -176,7 +182,6 @@ document.getElementById("asansor").addEventListener("change", function () {
     } else {
         asansorsuzOption.classList.remove("no-yapi");
     }
-
     if(seçilenAsansorVarId !=="asvar"){
         asan1.classList.add("no-yapi");
         asan2.classList.add("no-yapi");
@@ -236,6 +241,12 @@ function sifirla() {
     document.getElementById("yapi9").classList.add("no-yapi");
     document.getElementById("yapi10").classList.add("no-yapi");
     document.getElementById("hesapla").classList.remove("hesapla");   // hesaplama düğmesi gösteriliyor.
+
+        // Sayfayı yeniden yükler
+        location.reload();   
+    
+    // Sıfırla butonuna tıklanıldığında sifirla fonksiyonunu çağırır
+    document.getElementById("sifirlaButton").addEventListener("click", sifirla);
 };
 
 
@@ -284,9 +295,9 @@ function hesapla() {
 
         // Sadece "İş Merkezi" seçildiğinde katsayisi alanını kontrol et       
 
-        if (katsayisi.selectedIndex !== 0) {
+        if (isyeri.selectedIndex === 1) {
 
-            alanlar.push(katsayisi);
+            alanlar.push(katsayisi,asansor);
         }
     } else if (selectedValue === 'yapitipi3') {
 
