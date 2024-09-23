@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -29,9 +30,8 @@
     <!---------------------------------------------------------------------->
 
     <div class="center">
-
         <div class="baslik">
-            <h1>SİGORTA DEĞERİ HESAPLAMA</h1>
+            <h1>BİNA SİGORTA DEĞERİ HESAPLAMA MODÜLÜ</h1>
         </div>
 
         <!---------------------------------------------------------------------->
@@ -39,21 +39,21 @@
         <div class="tarihKutusu">
             <div class="tarih"></div>
         </div>
-
+        
         <!---------------------------------------------------------------------->
 
         <div class="yapi1">
             <form action="" id="myForm">
             <label class="input1">
-                <input class="input2" type="radio" name="binatipi" value="yapitipi1" id="yapitipi1"> <span> KONUT</span>
+                <input class="input2" type="radio" name="binatipi" value="yapitipi1" id="yapitipi1"> <span> KONUT  <i class="fa-solid fa-house"></i></span>
             </label>
             <label class="input1">
                 <input class="input2" type="radio" name="binatipi" value="yapitipi2" id="yapitipi2"><span> İŞ
-                    YERİ</span>
+                    YERİ  <i class="fa-solid fa-city"></i></span>
             </label>
             <label class="input1">
                 <input class="input2" type="radio" name="binatipi" value="yapitipi3" id="yapitipi3"><span> DİĞER
-                    YAPILAR</span>
+                    YAPILAR  <i class="fa-solid fa-industry"></i></span>
             </label>
         </form>
         </div>
@@ -212,10 +212,12 @@
                                         <li>
                                             <select name="konut" id="katsayisi">
                                                 <option value="" disabled selected>Seçiniz</option>
-                                                <option id="asansorsuz" value="1">1-3 Arası</option>
-                                                <option id="asan1" value="2">1-7 Arası</option>
-                                                <option id="asan2"  value="3">8-10 Arası</option>
-                                                <option id="asan3"  value="4">10 ve Üzeri</option>
+                                                <option id="asansorsuz" value="1">Zemin  1-3 Arası</option>
+                                                
+                                                <option id="asan1" value="2">Zemin  4-6 Arası</option>
+                                                <option id="asan2"  value="3">Zemin  7-9 Arası</option>
+                                                <option id="asan3"  value="4">Zemin  10-16 Arası</option>
+                                                <option id="asan4"  value="5">Zemin  17 üzeri</option>
                                             </select>
                                         </li>
                                     </ol>
@@ -238,7 +240,7 @@
                                         <option value="100">Betonarme</option>
                                         <option value="60" id="yapi5">Yığma Tuğla (Kerpiç)</option>
                                         <option value="80" id="yapi6">Ahşap</option>
-                                        <option value="90">Çelik Konstrüksiyon</option>
+                                        <option value="90">Çelik Konstrüksiyon</option>                                        
                                     </select>
                                 </li>
                             </ol>
@@ -277,7 +279,8 @@
                                     <select name="cati" id="cati">
                                         <option value="" disabled selected>Seçiniz</option>
                                         <option value="1">Ahşap Doğrama Kiremit Çatı</option>
-                                        <option value="1">Çelik Konstrüksiyon Çatı Kiremit</option>
+                                        <option value="1">Çelik Konstrüksiyon Kiremit Çatı</option>
+                                        <option value="0.90">Çelik Konstrüksiyon Sandviç Panel</option>
                                         <option value="1">Teras</option>
                                     </select>
                                 </li>
