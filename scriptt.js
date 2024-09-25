@@ -29,6 +29,8 @@ window.addEventListener('load', function () {
     }
 });
 
+    var dekor = document.getElementById("dekor");
+    
 
 document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
     radio.addEventListener('change', function () {
@@ -71,9 +73,12 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             ev4.classList.add("no-yapi");
             ev5.classList.add("no-yapi");
             ev6.classList.add("no-yapi");
+            dekor.classList.add("no-yapi");
         } else {
             yapi1.classList.remove("no-yapi");
             yapi2.classList.remove("no-yapi");
+            dekor.classList.remove("no-yapi");
+
         };
 
         if (seçilentip === 'yapitipi2') {
@@ -87,6 +92,8 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             yapi8.classList.add("no-yapi");
             yapi9.classList.add("no-yapi");
             yapi10.classList.add("no-yapi");
+            dekor.classList.add("no-yapi");
+
         } else {
             yapi3.classList.remove("no-yapi");
             yapi19.classList.remove("no-yapi");
@@ -108,6 +115,7 @@ document.querySelectorAll('input[name="binatipi"]').forEach(function (radio) {
             yapi15.classList.add("no-yapi");
             yapi16.classList.add("no-yapi");
             yapi17.classList.add("no-yapi");
+            dekor.classList.add("no-yapi");
         } else {
             yapi18.classList.remove("no-yapi");
             yapi20.classList.remove("no-yapi");
@@ -140,6 +148,8 @@ document.getElementById('konut').addEventListener('change', function () {
         ev4.classList.remove("no-yapi");
         ev5.classList.remove("no-yapi");
         ev6.classList.remove("no-yapi");
+        dekor.classList.remove("no-yapi");
+
 
     } else if (selectedId === yapi12.id) {
         yapi7.classList.remove("no-yapi");
@@ -152,6 +162,8 @@ document.getElementById('konut').addEventListener('change', function () {
         ev4.classList.remove("no-yapi");
         ev5.classList.remove("no-yapi");
         ev6.classList.remove("no-yapi");
+        dekor.classList.remove("no-yapi");
+
     } else {
         yapi7.classList.remove("no-yapi");
         yapi4.classList.remove("no-yapi");
@@ -334,7 +346,9 @@ function hesapla() {
     }
 
   let hesaplamaSonucu1;
+  var dekorValue = document.querySelector('select[name="dekor"]').value;
 
+console.log(dekorValue);
 // Seçilen tip ve metrekareye göre hesaplama
 if (selectedValue === 'yapitipi3') {
 
@@ -381,37 +395,37 @@ if (selectedValue === 'yapitipi3') {
 
         let mustakil = 12250; // Konutlar 3 kata kadar 3 kat dahil asansörsüz.
 
-        hesaplamaSonucu1 = mustakil * numberInput.value;
-
+        hesaplamaSonucu1 = mustakil * numberInput.value * dekorValue ;
+console.log(dekor.value);
      } else if (katsayisi.selectedIndex ===1) {
 
         let birkat = 13000; // 1-3 kat 
 
-        hesaplamaSonucu1 = birkat * numberInput.value;
+        hesaplamaSonucu1 = birkat * numberInput.value * dekorValue ;
 
     } else if (katsayisi.selectedIndex === 2) {
 
         let uckat = 14400; // 21,50 metre yüksekliğe kadar olan konutlar.
 
-        hesaplamaSonucu1 = uckat * numberInput.value;
+        hesaplamaSonucu1 = uckat * numberInput.value * dekorValue ;
 
     } else if (katsayisi.selectedIndex === 3) {
 
         let dortkat = 15300; // 30,50 metre yüksekliğe kadar olan apartman tipi konutlar.
 
-        hesaplamaSonucu1 = dortkat * numberInput.value;
+        hesaplamaSonucu1 = dortkat * numberInput.value * dekorValue ;
 
     } else if (katsayisi.selectedIndex === 4) {
 
         let beskat = 18700; // 30,50 metre ile 51,50 metre arası dahil.
 
-        hesaplamaSonucu1 = beskat * numberInput.value;
+        hesaplamaSonucu1 = beskat * numberInput.value * dekorValue ;
 
     } else if (asansor.selectedIndex === 2) {
 
         let asansorsuz13 = 12250;
 
-        hesaplamaSonucu1 = asansorsuz13 * numberInput.value;
+        hesaplamaSonucu1 = asansorsuz13 * numberInput.value * dekorValue ;
     }
 }
 
@@ -458,6 +472,4 @@ let newWindow = window.open();
 newWindow.document.write(newWindowContent);
 newWindow.document.close();
 }
-
-
 
