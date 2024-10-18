@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="reklamAlani">
+        <div class="ReklamKutusu">
+            <div class="Reklam">
+                <p>Reklam Alanı</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sigortaAlani">
+
+        <div class="baslikAlani">
+            <div class="baslikKutusu">
+                <div class="baslik">
+                    <h1>BİNA SİGORTA DEĞERİ HESAPLAMA MODÜLÜ</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarihAlani">
+            <div class="tarihKutusu">
+                <div>
+                    <p class="tarih"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="yapiTürleri">
+
+            <form action="" id="form" class="form">
+
+                <label for="konut" class="radio">
+                    <input type="radio" name="binatipi" id="konut"> <i class="fa-solid fa-house"
+                        value="konut"></i></span>
+                    <span>KONUT</span>
+                </label>
+
+                <label for="isYeri" class="radio">
+                    <input type="radio" name="binatipi" id="isYeri"> <i class="fa-solid fa-city"
+                        value=""></i></span></span>
+                    <span>İŞ YERİ</span>
+                </label>
+
+                <label for="digerYapilar" class="radio">
+                    <input type="radio" name="binatipi" id="digerYapilar"> <i class="fa-solid fa-industry"
+                        value=""></i></span>
+                    <span>DİĞER YAPILAR</span>
+                </label>
+
+        </div>
+
+        <div class="secimler" id="secimler">
+
+            <div class="yapi no-yapi" id="binaTarzi">
+                <ol>
+                    <p>Bina Durumu</p>
+                    <li>
+                        <select name="binaTarzi" id="binaTarziSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option value="12250" id="mustakil">Müstakil</option>
+                            <option value="1" id="apartman">Apartman Dairesi</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="asansor">
+                <ol>
+                    <p>Asansör Durumunu Seçiniz</p>
+                    <li>
+                        <select name="asansor" id="asansorSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option value="1" id="asvar">Asansör Var</option>
+                            <option value="50" id="asyok"> Asansör Yok</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="katsayisi">
+                <ol>
+                    <p>Bina Kat Sayısı</p>
+                    <li>
+                        <select name="konut" id="katsayisiSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option id="asan1" value="95">Zemin 1-3 Arası</option>
+                            <option id="asan4" value="96">Zemin 4-6 Arası</option>
+                            <option id="asan7" value="97">Zemin 7-9 Arası</option>
+                            <option id="asan10" value="98">Zemin 10-16 Arası</option>
+                            <option id="asan17" value="99">Zemin 17 üzeri</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="binaYapisi">
+                <ol>
+                    <p>Bina Yapı Tarzını Seçiniz</p>
+                    <li>
+                        <select name="binaYapisi" id="binaYapisiSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option value="1" id="kerpic">Yığma Tuğla (Kerpiç)</option>
+                            <option value="1" id="ahsap">Ahşap</option>
+                            <option value="1">Betonarme</option>
+                            <option value="1">Çelik Konstrüksiyon</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="nizam">
+                <ol>
+                    <p>Binanızın Nizamını Seçiniz</p>
+                    <li>
+                        <select name="nizam" id="nizamSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option value="1">Bitişik</option>
+                            <option value="1">Ayrık</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="cati">
+                <ol>
+                    <p>Konutun Çatısını Seçiniz</p>
+                    <li>
+                        <select name="cati" id="catiSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option value="1">Ahşap Doğrama Kiremit Çatı</option>
+                            <option value="1">Çelik Konstrüksiyon Kiremit Çatı</option>
+                            <option value="0.90">Çelik Konstrüksiyon Sandviç Panel</option>
+                            <option value="1">Teras</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="dekor">
+                <ol>
+                    <p>Konutta özel dekorasyonlar, kaplamalar vb. var mı ? </p>
+                    <li>
+                        <select name="dekor" id="dekorSelect">
+                            <option value="" disabled selected>Seçiniz</option>
+                            <option value="1.25">Var</option>
+                            <option value="1">Yok</option>
+                        </select>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="yapi no-yapi" id="metrekare">
+                <ol>
+                    <p>Konut Metrekaresini Giriniz</p>
+                    <input type="number" id="numberInput" name="metrekare" min="1" required placeholder="">
+                </ol>
+            </div>
+        </div>
+        <div class="buttons" id="buttons">
+
+            <button type="button" id="nazifbtn" class="no-yapi nazifbtn" onclick="nazifclick()">Hesapla</button>
+            <button type="button" id="sifirlabtn" class="no-yapi sifirlabtn" onclick="sifirlaclick()">Sıfırla</button>
+           
+        </div>
+        <!-- <p id="nazif"> sonuç</p> -->
+        </form>
+
+        <!-- Modal -->
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 style="text-align: center; margin-top: 5%; font-size: 2rem" id="selectedParts"></h3>
+                <h1 style="text-align: center; margin-top: 20px; font-size: 2rem; color: deepskyblue;" id="tavsiye"></h1>
+                <h1 style="text-align: center; margin-top: 20px; font-size: 4rem; color: deepskyblue" id="hesaplamaSonucu"></h1>
+                <h3 style="color: red; text-align: center; font-size: 2rem">ÖNEMLİ NOT :</h3>
+                <p style="color: red; text-align: center; font-size: 1,5rem">Hesaplanan sigorta değeri bilgilendirmek maksatlıdır.</p>
+                <p style="color: red; text-align: center; font-size: 1,5rem">Doğacak zararlardan veya hatalı işlemlerden dolayı sayfamız
+                    sorumlu tutulamaz.</p>
+                <p style="color: red; text-align: center; font-size: 1,5rem">Resmi bir geçerliliği yoktur.</p>
+            </div>
+        </div>
+
+        <div class="bosluk"></div>
+    </div>
+
+
+    <div class="reklamAlani">
+        <div class="ReklamKutusu">
+            <div class="Reklam">
+                <p>Reklam Alanı</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
