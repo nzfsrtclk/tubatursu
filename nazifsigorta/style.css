@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.bosluk {
+    margin: 5rem 0 5rem 0;
+}
+
+.reklamAlani {
+    /* background-color: aqua; */
+    height: 59rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sigortaAlani {
+    height: 59rem;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.tarih {
+    font-size: 2rem;
+    color: rgb(5, 24, 190);
+    font-weight: bolder;
+}
+
+
+
+.sigortaAlani .tarihAlani {
+    background: linear-gradient(to bottom, #0a8888, lightblue);
+    height: 3rem;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    margin: 1% 0 2% 0;
+}
+
+.sigortaAlani .baslikAlani {
+    background: linear-gradient(to bottom, #0a8888, lightblue);
+    height: 6rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    margin: 1% 0 0 0;
+}
+
+.radio {
+    padding-left: 1.2rem;
+    font-size: 1.5rem;
+    border: 0.4rem double #0a8888;
+    border-radius: 5rem;
+    padding: 0.3rem;
+    margin: 0 0.7rem 0 0.7rem;
+    transition: ease-in-out 1s;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 1);
+}
+
+.radio:hover {
+    background: turquoise;
+}
+
+.secimler .yapi {
+    border: 0.4rem groove #22b1b1;
+    border-radius: 1rem;
+    width: 65rem;
+    margin: 1.5rem 0 0 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.secimler .yapi p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.secimler .yapi ol li {
+    counter-increment: item;
+    margin: 10px 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+    list-style-type: none;
+    transition: 0.5s;
+    display: list-item;
+}
+
+.secimler .yapi ol li select {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 0.2rem solid white;
+    width: 95%;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 30px #171818;
+}
+
+#numberInput {
+    margin-left: 1.8rem;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 0.2rem solid white;
+    width: 88%;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 30px #171818;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 3rem;
+    width: 85%;
+    margin-left: 10%;
+    border-radius: 5px;
+    display: flex;
+    padding-left: 55rem;
+    padding-bottom: 30rem;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: radial-gradient(circle, #0a8888, #b5f3c3);
+    color: white;
+    box-shadow: 5px 5px 15px #171818;
+    transition: 1s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.no-yapi {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.calisma{
+    margin: 2%;
+    width: 100%;
+    height: 100vh;
+}
+
+ .calismaImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 400px;
+    margin: 2% 0 0 10%;
+    box-shadow: 0 50px 200px 50px rgb(49, 48, 48);
+    z-index: -1;
+} 
+
+.calismaText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin: -180px;
+    color: #fefefe;
+}
+
