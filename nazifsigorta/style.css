@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -13,27 +13,26 @@ body {
 }
 
 .reklamAlani {
-    background-color: aqua;
-    height: 59rem;
+    height: 1rem;
     width: 30%;
-    display: flex;
+    display: none;     /* flex çevir boy ayarla */
+    /* height: 100rem; */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
 .sigortaAlani {
-    height: 59rem;
-    width: 85%;
+    height: 200vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
 }
 
 .tarih {
-    font-size: 2rem;
+    font-size: 1rem;
     color: rgb(5, 24, 190);
     font-weight: bolder;
 }
@@ -49,30 +48,51 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5rem;
-    margin: 1% 0 2% 0;
+    margin: 1% 0 5% 0;
 }
 
 .sigortaAlani .baslikAlani {
     background: linear-gradient(to bottom, #0a8888, lightblue);
-    height: 6rem;
-    width: 90%;
+    height: 4.1rem;
+    width: 99%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 5rem;
-    margin: 1% 0 0 0;
+    margin: 1% 0 1% 0;
+}
+
+.sigortaAlani .baslikAlani .baslikKutusu {
+    height: 4.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sigortaAlani .baslikAlani .baslikKutusu h1 {
+    font-size: 0.8rem;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .radio {
-    padding-left: 1.2rem;
-    font-size: 1.5rem;
+    width: 90%;
+    padding-left: 0.2rem;
+    font-size: 1.2rem;
     border: 0.4rem double #0a8888;
     border-radius: 5rem;
     padding: 0.3rem;
-    margin: 0 0.7rem 0 0.7rem;
+    margin: 0 0.7rem 0.5rem 0.7rem;
     transition: ease-in-out 1s;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 1);
+    box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 1);
 }
 
 .radio:hover {
@@ -82,9 +102,9 @@ body {
 .secimler .yapi {
     border: 0.4rem groove #22b1b1;
     border-radius: 1rem;
-    width: 65rem;
-    margin: 1.5rem 0 0 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 20rem;
+    margin: 1.5rem 0.5rem 0 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .secimler .yapi p {
@@ -94,9 +114,9 @@ body {
 
 .secimler .yapi ol li {
     counter-increment: item;
-    margin: 10px 0;
-    padding-left: 25px;
-    padding-right: 25px;
+    margin: -0.2rem 0;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
     position: relative;
     list-style-type: none;
     transition: 0.5s;
@@ -104,49 +124,53 @@ body {
 }
 
 .secimler .yapi ol li select {
-    padding: 10px;
+    padding: 0.4rem;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: 0.2rem solid white;
     width: 95%;
-    margin-top: 1px;
-    margin-bottom: 10px;
-    box-shadow: 10px 10px 30px #171818;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 1rem 1rem 3rem #171818;
+}
+
+.secimler .yapi ol p {
+    font-size: 1.2rem;
 }
 
 #numberInput {
-    margin-left: 1.8rem;
-    padding: 10px;
+    margin-left: 0.5rem;
+    padding: 1rem;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     border: 0.2rem solid white;
-    width: 88%;
-    margin-top: 1px;
-    margin-bottom: 10px;
-    box-shadow: 10px 10px 30px #171818;
+    width: 78%;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+    box-shadow: 1rem 1rem 3rem #171818;
+    height: 0.3rem;
 }
 
 .buttons {
-    text-align: center;
     margin-top: 3rem;
-    width: 85%;
+    width: 100%;
     margin-left: 10%;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     display: flex;
-    padding-left: 55rem;
+    justify-content: center;
     padding-bottom: 30rem;
 }
 
 .buttons button {
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     background: radial-gradient(circle, #0a8888, #b5f3c3);
     color: white;
-    box-shadow: 5px 5px 15px #171818;
+    box-shadow: 0.5rem 0.5rem 1.5rem #171818;
     transition: 1s;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -218,123 +242,184 @@ body {
     z-index: 1;
     margin: -180px;
     color: #fefefe;
+    font-size: 0.8rem;
 }
 
-@media only screen and (max-width: 400px) {
+.modalBoyut1 {
+    font-size: 1rem;
+}
+
+.tavsiyeboyut {
+    font-size: 2rem;
+}
+
+.modalp {
+    font-size: 0.9rem;
+}
+
+@media only screen and (min-width: 650px) {
 
     body {
-        font-size: 10px;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
         display: flex;
-        flex-direction: column;
-        width: 99%;
-        align-self: start;
-        justify-content: flex-start;
-    }
-
-    .reklamAlani {
-        background-color: aqua;
-        width: 100%;
-        height: 8px;
-        margin-top: 1px;
-    }
-
-    .sigortaAlani {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content: flex-start;
-    }
-
-    .sigortaAlani .baslikAlani {
-        height: 5rem;
-        width: 100%;
-    }
-
-    .baslikKutusu{
-        width: 90%;
-    }
-
-    .baslik h1 {
-        display: flex;
-        justify-content: center;
+        flex-direction: row;
         align-items: center;
-        font-size: 12px;
-        width: 100%;
+        justify-content: center;
+    }
+
+    /* .reklamAlani {
+        background-image: url('resim/çalışma resmi.jpg');
+        height: 100vh;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    } */
+
+    .sigortaAlani .baslikAlani .baslikKutusu h1 {
+        font-size: 1.2rem;
     }
 
     .tarih {
-        font-size: 1.1rem;
-        color: rgb(5, 24, 190);
-        font-weight: bolder;
+        font-size: 1.3rem;
     }
 
     .radio {
-        padding: 0.6rem;
-        margin-left: 25px;
-        margin-bottom: 10px;
+        font-size: 1.1rem;
+        min-width: 10rem;
+    }
+
+    .digeryapi {
+        font-size: 0.9rem;
+    }
+
+    .form {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 10rem;
     }
 
     .secimler .yapi {
-        border: 0.4rem groove #22b1b1;
-        border-radius: 1rem;
-        width: 90%;
-        margin: 1.5rem;
-        margin-left: 1rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-width: 38rem;
+        margin: 1.5rem 0.5rem 0.8rem 0.5rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     }
 
     .secimler .yapi p {
-        font-size: 1.1rem;
-        flex-wrap: wrap;
-        display: flex;
-        width: 200px;
+        font-size: 1.8rem;
+        font-weight: bolder;
+        margin-bottom: 2rem;
     }
 
-    .secimler .yapi ol li {
-        padding-left: 0.8px;
-        padding-right: 15px;
+    .calismaImg {
+        width: 80%;
+        margin: 5% 0 0 10%;
     }
 
-    .secimler .yapi ol li select {
-        font-size: 1.6em;
+    .calismaText {
+        font-size: 1.3rem;
     }
 
-    #numberInput {
-        margin: 0;
-        font-size: 1.5em;
-        width: 82%;
-        margin-bottom: 10px;
-    }
-
-    .buttons {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        width: 90%;
-        padding: 0 0 50px 0;
-        margin: 0 0 0 0;
-    }
-
-    .modalBoyut1{
-        font-size: 1rem;
-    }
-    .tavsiyeboyut{
+    .modalBoyut1 {
         font-size: 2rem;
     }
 
-    .modalp{
-        font-size: 0.75rem;
+    .tavsiyeboyut {
+        font-size: 4rem;
     }
 
-    .modal-content {
-        margin: 5% 4% 5% 7%;
-        padding: 20px;
-        width: 90%;
-        max-width: 300px;
+    .modalp {
+        font-size: 1.5rem;
     }
-};
+}
+
+@media only screen and (min-width: 821px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* .reklamAlani {
+        background-image: url('resim/çalışma resmi.jpg');
+        height: 100vh;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    } */
+
+    .sigortaAlani .baslikAlani .baslikKutusu h1 {
+        font-size: 2.1rem;
+    }
+
+    .tarih {
+        font-size: 1.8rem;
+    }
+
+    .radio {
+        font-size: 2.1rem;
+        min-width: 13rem;
+    }
+
+    .digeryapi {
+        font-size: 1.1rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-width: 10rem;
+    }
+
+    .secimler .yapi {
+        min-width: 48rem;
+        margin: 1.5rem 0.5rem 0.8rem 0.5rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .secimler .yapi p {
+        font-size: 1.8rem;
+        font-weight: bolder;
+        margin-bottom: 2rem;
+    }
+
+    .buttons {
+        width: 50%;
+        margin-left: 10%;
+    }
+
+    .calismaImg {
+        width: 80%;
+        margin: 5% 0 0 10%;
+    }
+
+    .calismaText {
+        font-size: 1.8rem;
+    }
+
+    .modalBoyut1 {
+        font-size: 2.2rem;
+    }
+
+    .tavsiyeboyut {
+        font-size: 4.3rem;
+    }
+
+    .modalp {
+        font-size: 1.8rem;
+    }
+}
