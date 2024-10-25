@@ -360,6 +360,10 @@ body {
         justify-content: flex-start;
     } */
 
+    .sigortaAlani .baslikAlani{
+        width: 95%;
+    }
+
     .sigortaAlani .baslikAlani .baslikKutusu h1 {
         font-size: 2.1rem;
     }
