@@ -5,11 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BİNA SİGORTA DEĞERİ HESAPLAMA MODÜLÜ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Sayfa açıklaması ve anahtar kelimeler -->
+    <meta name="description" content="BİNA SİGORTA DEĞERİ HESAPLAMA MODÜLÜ ">
+    <meta name="keywords"
+        content="sigorta,eksper,ekspertiz,sigortacı,yangın,deprem,sel,felekat,toprak kayması,heyelan,şimşek,yıldırım,dolu,rüzgar,su,kaza,tutanak,bedel,hesaplama,modül,bina,işyeri,Türkiye,Türk,Haber,doğa,deniz,çöl,dere,nehir,göl,akarsu">
+
+    <!-- Yazar bilgisi -->
+    <meta name="author" content="Nazif Sertçelik">
+
+    <!-- Dil ayarı -->
+    <meta name="language" content="tr">
+
+    <!-- Sosyal medya için Open Graph meta etiketleri
+     <meta property="og:title" content="Sayfa Başlığı">
+     <meta property="og:description" content="Bu sayfanın kısa bir açıklaması.">
+     <meta property="og:image" content="https://www.ornek.com/gorsel.jpg">
+     <meta property="og:url" content="https://www.ornek.com">
+     <meta property="og:type" content="website">
+     
+     -->
+
+    <!-- Twitter Kart Etiketleri
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Sayfa Başlığı">
+     <meta name="twitter:description" content="Bu sayfanın kısa bir açıklaması.">
+     <meta name="twitter:image" content="https://www.ornek.com/gorsel.jpg"> 
+     
+     -->
 
 </head>
 
@@ -17,7 +46,18 @@
     <div class="reklamAlani">
         <div class="ReklamKutusu">
             <div class="Reklam">
-                <p></p>
+                <div class="utts">
+                    <img src="resim/utts.jpeg" alt="">
+                    <div class="bilgi">
+                        <a href="tel:+90530333072"
+                            class="list-group-item list-group-item-action list-group-item-primary">
+                            <i class="fa-solid fa-phone"> </i> Telefon
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=905303333072&amp;text=Bilgi Almak İstiyorum ? "
+                            class="list-group-item list-group-item-action list-group-item-primary" target="_blank"><i
+                                class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -45,29 +85,26 @@
             <form action="" id="form" class="form">
 
                 <label for="konut" class="radio">
-                    <input type="radio" name="binatipi" id="konut"> <i class="fa-solid fa-house"
-                        value="konut"></i></span>
-                    <span>KONUT</span>
+                    <input type="radio" name="binatipi" id="konut"> <i class="fa-solid fa-house" value="konut"></i>
+                    <span class="span"> KONUT</span>
                 </label>
 
                 <label for="isYeri" class="radio">
-                    <input type="radio" name="binatipi" id="isYeri"> <i class="fa-solid fa-city"
-                        value=""></i></span></span>
-                    <span>İŞ YERİ</span>
+                    <input type="radio" name="binatipi" id="isYeri"> <i class="fa-solid fa-city" value=""></i>
+                    <span class="span"> İŞ YERİ</span>
                 </label>
 
                 <label for="digerYapilar" class="radio">
-                    <input type="radio" name="binatipi" id="digerYapilar"> <i class="fa-solid fa-industry"
-                        value=""></i></span>
-                    <span>DİĞER YAPILAR</span>                    
+                    <input type="radio" name="binatipi" id="digerYapilar"> <i class="fa-solid fa-dungeon"></i>
+                    <span class="digeryapi"> DİĞER YAPILAR</span>
                 </label>
         </div>
 
 
-<div class="calisma" id="calisma">
-        <img class="no-yapi calismaImg" id="calismaImg" src="resim/çalışma resmi.jpg" alt="">
-        <h2 class="no-yapi calismaText" id="calismaText" >ÇALIŞMALARIMIZ DEVAM ETMEKTEDİR</h2>
-    </div>
+        <div class="calisma" id="calisma">
+            <img class="no-yapi calismaImg" id="calismaImg" src="resim/çalışma resmi.jpg" alt="">
+            <h2 class="no-yapi calismaText" id="calismaText">ÇALIŞMALARIMIZ DEVAM ETMEKTEDİR</h2>
+        </div>
 
 
         <div class="secimler" id="secimler">
@@ -120,8 +157,8 @@
                     <li>
                         <select name="binaYapisi" id="binaYapisiSelect">
                             <option value="" disabled selected>Seçiniz</option>
-                             <option value="1" id="kerpic">Yığma Tuğla (Kerpiç)</option>
-                            <option value="1" id="ahsap">Ahşap</option> 
+                            <option value="1" id="kerpic">Yığma Tuğla (Kerpiç)</option>
+                            <option value="1" id="ahsap">Ahşap</option>
                             <option value="1">Betonarme</option>
                             <option value="1">Çelik Konstrüksiyon</option>
                         </select>
@@ -163,7 +200,7 @@
                     <li>
                         <select name="dekor" id="dekorSelect">
                             <option value="" disabled selected>Seçiniz</option>
-                            <option value="1.25">Var</option>
+                            <option value="1.15">Var ( Maliyete %15 Eklenir. )</option>
                             <option value="1">Yok</option>
                         </select>
                     </li>
@@ -181,9 +218,26 @@
 
             <button type="button" id="nazifbtn" class="no-yapi nazifbtn" onclick="nazifclick()">Hesapla</button>
             <button type="button" id="sifirlabtn" class="no-yapi sifirlabtn" onclick="sifirlaclick()">Sıfırla</button>
-           
         </div>
-        <!-- <p id="nazif"> sonuç</p> -->
+        <div class="aciklamaAlani">
+            <p class="acikama">Çevre Şehircilik ve İklim değişikliği Bakanlığı yıllık yapı birim maliyetleri ve TÜİK'in İnşaat Maliyet Endeksleri ( 3 ayda bir değerledirmeye alınıyor ). baz alınarak hesaplama yapılmaktadır.  </p>
+        </div>
+        <br><br><br><br><br>
+
+        <div class="eksiksigorta">
+            <div class="eksiksigor">
+                <button class="eksiksigortabutton" onclick="showModal()">Eksik Sigorta Nedir?</button>
+            </div>
+        </div>
+
+        <!-- Modal Eksik Sigorta -->
+        <div id="imageModala" class="modala">
+            <div class="modal-contenta">
+                <span class="closea" onclick="hideModal()">&times;</span>
+                <img src="resim/Adsız.jpg" alt="">
+            </div>
+        </div>
+
         </form>
 
         <!-- Modal -->
@@ -191,14 +245,18 @@
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h3 style="text-align: center; margin-top: 5%; font-size: 2rem" id="selectedParts"></h3>
-                <h1 style="text-align: center; margin-top: 20px; font-size: 2rem; color: deepskyblue;" id="tavsiye"></h1>
-                <h1 style="text-align: center; margin-top: 20px; font-size: 4rem; color: deepskyblue" id="hesaplamaSonucu"></h1>
-                <h3 style="color: red; text-align: center; font-size: 2rem">ÖNEMLİ NOT :</h3>
-                <p style="color: red; text-align: center; font-size: 1.5rem">Hesaplanan sigorta değeri bilgilendirmek maksatlıdır.</p>
-                <p style="color: red; text-align: center; font-size: 1.5rem">Doğacak zararlardan veya hatalı işlemlerden dolayı sayfamız
+                <h3 class="modalBoyut1" style="text-align: center; margin-top: 5%" id="selectedParts"></h3>
+                <h1 class="modalBoyut1" style="text-align: center; margin-top: 20px; color: deepskyblue;" id="tavsiye">
+                </h1>
+                <h1 class="tavsiyeboyut" style="text-align: center; margin-top: 20px; color: deepskyblue"
+                    id="hesaplamaSonucu"></h1>
+                <h3 class="modalBoyut1" style="color: red; text-align: center">ÖNEMLİ NOT :</h3>
+                <p class="modalp" style="color: red; text-align: center">Hesaplanan sigorta değeri bilgilendirmek
+                    maksatlıdır.</p>
+                <p class="modalp" style="color: red; text-align: center">Doğacak zararlardan veya hatalı işlemlerden
+                    dolayı sayfamız
                     sorumlu tutulamaz.</p>
-                <p style="color: red; text-align: center; font-size: 1.5rem">Resmi bir geçerliliği yoktur.</p>
+                <p class="modalp" style="color: red; text-align: center">Resmi bir geçerliliği yoktur.</p>
             </div>
         </div>
 
@@ -214,7 +272,7 @@
         </div>
     </div>
     <script src="script.js"></script>
-    
+
 </body>
 
 </html>
