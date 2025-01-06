@@ -26,6 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Eksik sigorta nedir tıklandığında açılacak resim
+
+function showModal() {
+    document.getElementById('imageModala').style.display = 'block';
+}
+
+function hideModal() {
+    document.getElementById('imageModala').style.display = 'none';
+}
+
+//-----------------------
+
 var isyeri = document.querySelector("#isYeri").addEventListener("change", function () {
     isyeri = this.options[this.selectedIndex].value; console.log("isyeri " + isyeri)
 });
@@ -239,7 +251,7 @@ function nazifclick() {
     }
  
     let hesaplamaSonucu = document.getElementById("hesaplamaSonucu");  
-    var sonuc2 = sonuc;
+    var sonuc2 = sonuc*(145/100);
 
     hesaplamaSonucu.innerHTML = sonuc2.toLocaleString({ style: 'currency', currency: 'TRY' }) + " TL";;
 
@@ -249,11 +261,19 @@ function nazifclick() {
 
     document.getElementById("nazifbtn").disabled = true;
     document.getElementById("nazifbtn").classList.add("no-yapi");
-
 };
 
+
+document.getElementById("numberInput").addEventListener("keydown", function(event) {
+    // Enter tuşuna basıldığında işlemi yap
+    if (event.key === "Enter") {
+        event.preventDefault(); // Varsayılan davranışı engelle (form gönderimini engelle)
+        hesapla(); // Hesaplama fonksiyonunu çağır
+        hesaplamaSonucu.innerHTML = sonuc2.toLocaleString({ style: 'currency', currency: 'TRY' }) + " TL";;
+    }
+});
 
 function sifirlaclick() {
-    location.reload(); // Sayfayı yeniden yükler
-};
-
+    location.reload();  // Sayfayı yeniden yükler
+    window.scrollTo(0, 0);  // Sayfanın başına gider
+}
