@@ -3,28 +3,67 @@ body {
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 .bosluk {
-    margin: 5rem 0 10rem 0;
+    margin: 0;
 }
 
 .reklamAlani {
-    height: 1rem;
-    width: 30%;
-    display: none;     /* flex çevir boy ayarla */
-    /* height: 100rem; */
-    flex-direction: column;
+    display: flex;
+    align-self: self-start;
+    justify-self: center;
+    width: 20%;
+    margin-top: 4rem;
+}
+
+.ReklamKutusu {
+    margin-top: 10%;
+}
+
+.reklamAlani .utts img {
+    width: 80%;
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left: 27%;
+    transition: 1.5s;
+}
+
+.reklamAlani .utts img:hover {
+    width: 60%;
+    padding-left: 22%;
+}
+
+.reklamAlani .utts a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    text-decoration: none;
+    font-size: 0.7rem;
+    color: #1507df;
+}
+
+.reklamAlani .utts a:hover {
+    color: #28492a;
+    background: #888;
+    border-radius: 1rem;
+    margin-left: 8%;
+    width: 80%;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .sigortaAlani {
     height: 200vh;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +81,7 @@ body {
 .sigortaAlani .tarihAlani {
     background: linear-gradient(to bottom, #0a8888, lightblue);
     height: 3rem;
-    width: 35%;
+    width: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,8 +111,7 @@ body {
 }
 
 .sigortaAlani .baslikAlani .baslikKutusu h1 {
-    font-size: 0.8rem;
-
+    font-size: 0.6rem;
 }
 
 .form {
@@ -158,7 +196,7 @@ body {
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
-    padding-bottom: 30rem;
+    padding-bottom: 3rem;
 }
 
 .buttons button {
@@ -173,7 +211,22 @@ body {
     box-shadow: 0.5rem 0.5rem 1.5rem #171818;
     transition: 1s;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
+.acikama {
+    padding: 0;
+    margin: 0.1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aciklamaAlani {
+    background-color: rgb(214, 72, 72);
+    border-radius: 5px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: rgb(206, 197, 179);
 }
 
 .no-yapi {
@@ -257,7 +310,89 @@ body {
     font-size: 0.9rem;
 }
 
+
+/* Modal EKSİK SİGORTA KISMI */
+
+.eksiksigortabutton {
+    background-color: #4CAF50;
+    /* Başlangıç arka plan rengi */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 1s ease;
+    /* Geçiş efekti */
+    border-radius: 5px;
+}
+
+.eksiksigortabutton:hover {
+    background-color: #28492a;
+    /* Üzerine gelindiğinde değişen arka plan rengi */
+    border-radius: 10px;
+}
+
+.modala {
+    display: none;
+    /* Modal başlangıçta gizli */
+    position: fixed;
+    /* Sayfanın üstüne sabitlenmiş */
+    z-index: 1;
+    /* Ön planda göster */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Tam genişlik */
+    height: 100%;
+    /* Tam yükseklik */
+    overflow: auto;
+    /* İçeriği kaydır */
+    background-color: rgb(0, 0, 0);
+    /* Fallback rengi */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Siyah, saydam arka plan */
+}
+
+.modal-contenta {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* Ortalar */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Genişlik */
+    max-width: 600px;
+    /* Maksimum genişlik */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.closea {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    font-weight: bolder;
+    color: #f50909;
+    cursor: pointer;
+}
+
+.closea:hover,
+.closea:focus {
+    color: #e98776;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
 @media only screen and (min-width: 650px) {
+
 
     body {
         margin: 0;
@@ -269,18 +404,8 @@ body {
         justify-content: center;
     }
 
-    /* .reklamAlani {
-        background-image: url('resim/çalışma resmi.jpg');
-        height: 100vh;
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    } */
-
     .sigortaAlani .baslikAlani .baslikKutusu h1 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .tarih {
@@ -298,7 +423,7 @@ body {
 
     .form {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         min-width: 10rem;
@@ -336,6 +461,72 @@ body {
     .modalp {
         font-size: 1.5rem;
     }
+
+    .reklamAlani {
+        display: flex;
+        align-self: start;
+        width: 20%;
+    }
+    
+    .ReklamKutusu {
+        margin-top: 1rem;
+    }
+    
+    .reklamAlani .utts img {    
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-left: 20%;
+        transition: 1.5s;
+    }
+    
+    .reklamAlani .utts a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        text-decoration: none;
+        font-size: 1rem;
+        padding-left: 35%;
+    }
+    
+    .reklamAlani .utts a:hover {
+        color: #28492a;
+        background: #888;
+        border-radius: 1rem;
+        margin-left: 10%;
+        padding-left: 18%;
+        width: 100%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    
+    }
+
+    .aciklamaAlani{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60%;
+    }
+
+    .acikama{
+        font-size: 1.2rem;
+    }
+
+    .modala{
+        width: 100%;
+    }
+
+    .modal-contenta{
+        width: 99%;
+    }
+
+    .modala .modal-contenta img{
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 821px) {
@@ -350,22 +541,12 @@ body {
         justify-content: center;
     }
 
-    /* .reklamAlani {
-        background-image: url('resim/çalışma resmi.jpg');
-        height: 100vh;
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    } */
-
-    .sigortaAlani .baslikAlani{
-        width: 95%;
+    .sigortaAlani .baslikAlani {
+        width: 98%;
     }
 
     .sigortaAlani .baslikAlani .baslikKutusu h1 {
-        font-size: 2.1rem;
+        font-size: 1.01rem;
     }
 
     .tarih {
@@ -383,7 +564,7 @@ body {
 
     .form {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         min-width: 10rem;
@@ -426,4 +607,66 @@ body {
     .modalp {
         font-size: 1.8rem;
     }
+
+    .reklamAlani {
+        display: flex;
+        align-self: start;
+        width: 20%;
+        margin-top: 1.2rem;
+        display: flex;
+        align-self:flex-start;
+    }
+    
+    .ReklamKutusu {
+        margin-top: 35%;
+    }
+    
+    .reklamAlani .utts img {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-left: 12%;
+        transition: 1.5s;
+    }
+    
+    .reklamAlani .utts img:hover {
+        width: 120%;
+        padding-left: 22%;
+    }
+    
+    .reklamAlani .utts a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding-left: 22%;
+
+    }
+    
+    .reklamAlani .utts a:hover {
+        color: #28492a;
+        background: #888;
+        border-radius: 1rem;
+        width: 85%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        padding-left: 20%;    
+    }
+    
+    .aciklamaAlani{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .acikama{
+        font-size: 2rem;
+    }
+
 }
